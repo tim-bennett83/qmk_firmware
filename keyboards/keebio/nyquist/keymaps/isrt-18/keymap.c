@@ -47,7 +47,11 @@ enum {
     FLAG_ARCHIVE,
     BOOKMARK,
     SCREENSHOT,
-    HIDE
+    HIDE,
+    CTL_T_V,
+    ALT_T_W,
+    ALT_T_Q,
+    CTL_T_Z
 };
 
 td_state_t cur_dance(qk_tap_dance_state_t *state);
@@ -65,6 +69,14 @@ void screenshot_finished(qk_tap_dance_state_t *state, void *user_data);
 void screenshot_reset(qk_tap_dance_state_t *state, void *user_data);
 void hide_finished(qk_tap_dance_state_t *state, void *user_data);
 void hide_reset(qk_tap_dance_state_t *state, void *user_data);
+void ctl_t_v_finished(qk_tap_dance_state_t *state, void *user_data);
+void ctl_t_v_reset(qk_tap_dance_state_t *state, void *user_data);
+void alt_t_w_finished(qk_tap_dance_state_t *state, void *user_data);
+void alt_t_w_reset(qk_tap_dance_state_t *state, void *user_data);
+void alt_t_q_finished(qk_tap_dance_state_t *state, void *user_data);
+void alt_t_q_reset(qk_tap_dance_state_t *state, void *user_data);
+void ctl_t_z_finished(qk_tap_dance_state_t *state, void *user_data);
+void ctl_t_z_reset(qk_tap_dance_state_t *state, void *user_data);
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [_ALPHA0] = LAYOUT_ortho_4x12(
@@ -81,12 +93,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   XXXXXXX, XXXXXXX,      XXXXXXX,     XXXXXXX,        XXXXXXX,       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,       XXXXXXX,          XXXXXXX,     XXXXXXX
 ),
 
-// TODO: use tap dance to put modtap on shifted letters
 [_ALPHAC] = LAYOUT_ortho_4x12(
-  XXXXXXX,    XXXXXXX,      XXXXXXX,     XXXXXXX,        XXXXXXX,       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,        XXXXXXX,    XXXXXXX,     XXXXXXX,
-  XXXXXXX,    LSFT(KC_V),   LSFT(KC_W),  CMD_T(KC_MINS), XXXXXXX,       XXXXXXX, XXXXXXX, XXXXXXX, CMD_T(KC_QUOT), LSFT(KC_Q), LSFT(KC_Z),  XXXXXXX,
-  LSFT(KC_Y), LSFT(KC_M),   LSFT(KC_H),  LSFT(KC_G),     XXXXXXX,       XXXXXXX, XXXXXXX, XXXXXXX, LSFT(KC_P),     LSFT(KC_F), LSFT(KC_K),  LSFT(KC_X),
-  XXXXXXX,    XXXXXXX,      XXXXXXX,     XXXXXXX,        XXXXXXX,       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,        XXXXXXX,    XXXXXXX,     XXXXXXX
+  XXXXXXX,    XXXXXXX,      XXXXXXX,     XXXXXXX,        XXXXXXX,       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,        XXXXXXX,     XXXXXXX,     XXXXXXX,
+  XXXXXXX,    TD(CTL_T_V),  TD(ALT_T_W), CMD_T(KC_MINS), XXXXXXX,       XXXXXXX, XXXXXXX, XXXXXXX, CMD_T(KC_QUOT), TD(ALT_T_Q), TD(CTL_T_Z), XXXXXXX,
+  LSFT(KC_Y), LSFT(KC_M),   LSFT(KC_H),  LSFT(KC_G),     XXXXXXX,       XXXXXXX, XXXXXXX, XXXXXXX, LSFT(KC_P),     LSFT(KC_F),  LSFT(KC_K),  LSFT(KC_X),
+  XXXXXXX,    XXXXXXX,      XXXXXXX,     XXXXXXX,        XXXXXXX,       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,        XXXXXXX,     XXXXXXX,     XXXXXXX
 ),
 
 [_SYM1] = LAYOUT_ortho_4x12(
@@ -154,7 +165,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 [_SYSTEM] = LAYOUT_ortho_4x12(
   _______, _______, _______, _______, _______, _______, _______, _______,       _______,       _______,       _______, _______,
-  _______, KC_GRV,  KC_DEL,  KC_CAPS, _______, _______, _______, _______,       _______,       OSM(MOD_LALT), _______, _______,
+  _______, KC_GRV,  KC_DEL,  KC_CAPS, _______, _______, _______, _______,       KC_INS,        OSM(MOD_LALT), _______, _______,
   KC_ESC,  KC_TAB,  KC_BSPC, KC_ENT,  _______, _______, _______, _______,       LSFT(KC_COMM), LSFT(KC_DOT),  XXXXXXX, _______,
   _______, _______, _______, _______, _______, _______, _______, OSM(MOD_LGUI), OSM(MOD_LCTL), _______,       _______, _______
 ),
@@ -254,7 +265,11 @@ qk_tap_dance_action_t tap_dance_actions[] = {
     [FLAG_ARCHIVE] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, flag_archive_finished, flag_archive_reset),
     [BOOKMARK] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, bookmark_finished, bookmark_reset),
     [SCREENSHOT] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, screenshot_finished, screenshot_reset),
-    [HIDE] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, hide_finished, hide_reset)
+    [HIDE] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, hide_finished, hide_reset),
+    [CTL_T_V] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, ctl_t_v_finished, ctl_t_v_reset),
+    [ALT_T_W] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, alt_t_w_finished, alt_t_w_reset),
+    [ALT_T_Q] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, alt_t_q_finished, alt_t_q_reset),
+    [CTL_T_Z] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, ctl_t_z_finished, ctl_t_z_reset)
 };
 
 void undo_redo_finished(qk_tap_dance_state_t *state, void *user_data) {
@@ -390,6 +405,98 @@ void hide_reset(qk_tap_dance_state_t *state, void *user_data) {
     switch (td_state) {
         case TD_SINGLE_TAP: unregister_code16(LGUI(KC_H)); break;
         case TD_SINGLE_HOLD: unregister_code16(LALT(LGUI(KC_H))); break;
+        default: break;
+    }
+    td_state = TD_NONE;
+}
+
+void ctl_t_v_finished(qk_tap_dance_state_t *state, void *user_data) {
+    td_state = cur_dance(state);
+    switch (td_state) {
+        case TD_SINGLE_TAP: register_code16(LSFT(KC_V)); break;
+        case TD_SINGLE_HOLD: register_mods(MOD_BIT(KC_LCTL)); break;
+        case TD_DOUBLE_TAP:
+        case TD_DOUBLE_SINGLE_TAP: tap_code16(LSFT(KC_V)); register_code16(LSFT(KC_V)); break;
+        default: break;
+    }
+}
+
+void ctl_t_v_reset(qk_tap_dance_state_t *state, void *user_data) {
+    wait_ms(10);
+    switch (td_state) {
+        case TD_SINGLE_TAP: unregister_code16(LSFT(KC_V)); break;
+        case TD_SINGLE_HOLD: unregister_mods(MOD_BIT(KC_LCTL)); break;
+        case TD_DOUBLE_TAP:
+        case TD_DOUBLE_SINGLE_TAP: unregister_code16(LSFT(KC_V)); break;
+        default: break;
+    }
+    td_state = TD_NONE;
+}
+
+void alt_t_w_finished(qk_tap_dance_state_t *state, void *user_data) {
+    td_state = cur_dance(state);
+    switch (td_state) {
+        case TD_SINGLE_TAP: register_code16(LSFT(KC_W)); break;
+        case TD_SINGLE_HOLD: register_mods(MOD_BIT(KC_LALT)); break;
+        case TD_DOUBLE_TAP:
+        case TD_DOUBLE_SINGLE_TAP: tap_code16(LSFT(KC_W)); register_code16(LSFT(KC_W)); break;
+        default: break;
+    }
+}
+
+void alt_t_w_reset(qk_tap_dance_state_t *state, void *user_data) {
+    wait_ms(10);
+    switch (td_state) {
+        case TD_SINGLE_TAP: unregister_code16(LSFT(KC_W)); break;
+        case TD_SINGLE_HOLD: unregister_mods(MOD_BIT(KC_LALT)); break;
+        case TD_DOUBLE_TAP:
+        case TD_DOUBLE_SINGLE_TAP: unregister_code16(LSFT(KC_W)); break;
+        default: break;
+    }
+    td_state = TD_NONE;
+}
+
+void alt_t_q_finished(qk_tap_dance_state_t *state, void *user_data) {
+    td_state = cur_dance(state);
+    switch (td_state) {
+        case TD_SINGLE_TAP: register_code16(LSFT(KC_Q)); break;
+        case TD_SINGLE_HOLD: register_mods(MOD_BIT(KC_LALT)); break;
+        case TD_DOUBLE_TAP:
+        case TD_DOUBLE_SINGLE_TAP: tap_code16(LSFT(KC_Q)); register_code16(LSFT(KC_Q)); break;
+        default: break;
+    }
+}
+
+void alt_t_q_reset(qk_tap_dance_state_t *state, void *user_data) {
+    wait_ms(10);
+    switch (td_state) {
+        case TD_SINGLE_TAP: unregister_code16(LSFT(KC_Q)); break;
+        case TD_SINGLE_HOLD: unregister_mods(MOD_BIT(KC_LALT)); break;
+        case TD_DOUBLE_TAP:
+        case TD_DOUBLE_SINGLE_TAP: unregister_code16(LSFT(KC_Q)); break;
+        default: break;
+    }
+    td_state = TD_NONE;
+}
+
+void ctl_t_z_finished(qk_tap_dance_state_t *state, void *user_data) {
+    td_state = cur_dance(state);
+    switch (td_state) {
+        case TD_SINGLE_TAP: register_code16(LSFT(KC_Z)); break;
+        case TD_SINGLE_HOLD: register_mods(MOD_BIT(KC_LCTL)); break;
+        case TD_DOUBLE_TAP:
+        case TD_DOUBLE_SINGLE_TAP: tap_code16(LSFT(KC_Z)); register_code16(LSFT(KC_Z)); break;
+        default: break;
+    }
+}
+
+void ctl_t_z_reset(qk_tap_dance_state_t *state, void *user_data) {
+    wait_ms(10);
+    switch (td_state) {
+        case TD_SINGLE_TAP: unregister_code16(LSFT(KC_Z)); break;
+        case TD_SINGLE_HOLD: unregister_mods(MOD_BIT(KC_LCTL)); break;
+        case TD_DOUBLE_TAP:
+        case TD_DOUBLE_SINGLE_TAP: unregister_code16(LSFT(KC_Z)); break;
         default: break;
     }
     td_state = TD_NONE;
