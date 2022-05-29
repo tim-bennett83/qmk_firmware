@@ -43,3 +43,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define NO_ACTION_MACRO
 #define NO_ACTION_FUNCTION
 #define TAPPING_TOGGLE 2
+
+#define MOUSEKEY_MAX_SPEED 7
+#define MOUSEKEY_TIME_TO_MAX 60
+#define MOUSEKEY_WHEEL_INTERVAL 50
+#define MOUSEKEY_WHEEL_MAX_SPEED 3
+#define MOUSEKEY_WHEEL_TIME_TO_MAX 200
