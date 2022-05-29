@@ -165,7 +165,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 [_SYSTEM] = LAYOUT_ortho_4x12(
   _______, _______, _______, _______, _______, _______, _______, _______,       _______,       _______,       _______, _______,
-  _______, KC_GRV,  KC_DEL,  KC_CAPS, _______, _______, _______, _______,       KC_INS,        OSM(MOD_LALT), _______, _______,
+  _______, KC_GRV,  KC_DEL,  KC_CAPS, _______, _______, _______, _______,       CAPS_WORD,        OSM(MOD_LALT), _______, _______,
   KC_ESC,  KC_TAB,  KC_BSPC, KC_ENT,  _______, _______, _______, _______,       LSFT(KC_COMM), LSFT(KC_DOT),  XXXXXXX, _______,
   _______, _______, _______, _______, _______, _______, _______, OSM(MOD_LGUI), OSM(MOD_LCTL), _______,       _______, _______
 ),
