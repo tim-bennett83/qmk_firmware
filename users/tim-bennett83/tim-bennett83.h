@@ -1,3 +1,4 @@
+#pragma once
 
 enum layer_names {
     _ALPHA0,
