@@ -74,6 +74,9 @@ void alt_t_z_reset(qk_tap_dance_state_t *state, void *user_data);
 void ctl_t_q_finished(qk_tap_dance_state_t *state, void *user_data);
 void ctl_t_q_reset(qk_tap_dance_state_t *state, void *user_data);
 
+const uint16_t PROGMEM test_combo1[3];
+const uint16_t PROGMEM test_combo2[3];
+combo_t key_combos[COMBO_COUNT];
 
 #define TIM_isrt18 { \
 [_ALPHA0] = MKLAYOUT( \
@@ -169,8 +172,8 @@ void ctl_t_q_reset(qk_tap_dance_state_t *state, void *user_data);
  \
 [_BOARD] = MKLAYOUT( \
   _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,        _______, \
-  _______, RGB_SAI, RGB_HUD, RGB_HUI, _______, _______, _______, _______, _______, _______, RESET,          _______, \
-  RGB_TOG, RGB_SAD, RGB_VAD, RGB_VAI, _______, _______, _______, _______, RGB_MOD, XXXXXXX, RGB_MODE_PLAIN, _______, \
+  _______, RGB_SAI, RGB_VAI, RGB_HUI, RGB_SPI, _______, _______, _______, _______, _______, RESET,          _______, \
+  RGB_TOG, RGB_SAD, RGB_VAD, RGB_HUD, RGB_SPD, _______, _______, _______, RGB_MOD, XXXXXXX, RGB_MODE_PLAIN, _______, \
   _______, _______, _______, _______, _______, _______,          _______, _______, _______, _______,        _______ \
 ), \
  \

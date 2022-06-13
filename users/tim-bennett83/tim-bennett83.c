@@ -8,6 +8,13 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   return true;
 }
 
+const uint16_t PROGMEM test_combo1[] = {KC_A, KC_B, COMBO_END};
+const uint16_t PROGMEM test_combo2[] = {KC_C, KC_D, COMBO_END};
+combo_t key_combos[COMBO_COUNT] = {
+    COMBO(test_combo1, KC_ESC),
+    COMBO(test_combo2, LCTL(KC_Z)) // keycodes with modifiers are possible too!
+};
+
 qk_tap_dance_action_t tap_dance_actions[] = {
     [UNDO_REDO] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, undo_redo_finished, undo_redo_reset),
     [CLOSE_QUIT] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, close_quit_finished, close_quit_reset),
