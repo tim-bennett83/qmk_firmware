@@ -183,11 +183,13 @@ void reset_oneshot_layer(void) {
  */
 void clear_oneshot_layer_state(oneshot_fullfillment_t state) {
     uint8_t start_state = oneshot_layer_data;
+    uint8_t weak = get_weak_mods();
     oneshot_layer_data &= ~state;
     if ((!get_oneshot_layer_state() && start_state != oneshot_layer_data) && keymap_config.oneshot_enable) {
         layer_off(get_oneshot_layer());
         reset_oneshot_layer();
     }
+    set_weak_mods(weak);
 }
 /** \brief Is oneshot layer active
  *
