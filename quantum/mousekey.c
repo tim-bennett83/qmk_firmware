@@ -252,10 +252,8 @@ void mousekey_task(void) {
         }
     }
 
-    if (has_mouse_report_changed(&mouse_report, &tmpmr)) {
-        mousekey_send();
-    }
-    memcpy(&mouse_report, &tmpmr, sizeof(tmpmr));
+    if (mouse_report.x || mouse_report.y || mouse_report.v || mouse_report.h) mousekey_send();
+      mouse_report = tmpmr;
 }
 
 void mousekey_on(uint8_t code) {
@@ -358,10 +356,8 @@ void mousekey_task(void) {
         mouse_report.h = tmpmr.h;
     }
 
-    if (has_mouse_report_changed(&mouse_report, &tmpmr)) {
-        mousekey_send();
-    }
-    memcpy(&mouse_report, &tmpmr, sizeof(tmpmr));
+    if (mouse_report.x || mouse_report.y || mouse_report.v || mouse_report.h) mousekey_send();
+      mouse_report = tmpmr;
 }
 
 void adjust_speed(void) {
