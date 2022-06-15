@@ -8,11 +8,20 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   return true;
 }
 
-const uint16_t PROGMEM test_combo1[] = {KC_A, KC_B, COMBO_END};
-const uint16_t PROGMEM test_combo2[] = {KC_C, KC_D, COMBO_END};
+const uint16_t PROGMEM bspc_combo[] = {CTL_T(KC_C), OPT_T(KC_L), CMD_T(KC_D), COMBO_END};
+const uint16_t PROGMEM enter_combo[] = {CMD_T(KC_J), OPT_T(KC_U), CTL_T(KC_B), COMBO_END};
+const uint16_t PROGMEM colon_combo[] = {CMD_T(KC_J), CTL_T(KC_B), COMBO_END};
+const uint16_t PROGMEM quote_combo[] = {LT(_SYM2, KC_S), LT(_FKEYS, KC_T), LT(_BOARD, KC_E), COMBO_END};
+const uint16_t PROGMEM scln_combo[] = {LT(_SYM2, KC_S), LT(_SYM3, KC_N), LT(_SYSTEM, KC_A), COMBO_END};
+const uint16_t PROGMEM eql_combo[] = {CTL_T(KC_C), LT(_SYM3, KC_N), LT(_SYSTEM, KC_A), COMBO_END};
+
 combo_t key_combos[COMBO_COUNT] = {
-    COMBO(test_combo1, KC_ESC),
-    COMBO(test_combo2, LCTL(KC_Z)) // keycodes with modifiers are possible too!
+    COMBO(bspc_combo, KC_BSPC),
+    COMBO(enter_combo, KC_ENT),
+    COMBO(colon_combo, LSFT(KC_SCLN)),
+    COMBO(quote_combo, LSFT(KC_QUOT)),
+    COMBO(scln_combo, KC_SCLN),
+    COMBO(eql_combo, KC_EQL)
 };
 
 qk_tap_dance_action_t tap_dance_actions[] = {

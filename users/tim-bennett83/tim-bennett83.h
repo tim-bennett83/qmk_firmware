@@ -75,10 +75,6 @@ void alt_t_z_reset(qk_tap_dance_state_t *state, void *user_data);
 void ctl_t_q_finished(qk_tap_dance_state_t *state, void *user_data);
 void ctl_t_q_reset(qk_tap_dance_state_t *state, void *user_data);
 
-const uint16_t PROGMEM test_combo1[3];
-const uint16_t PROGMEM test_combo2[3];
-combo_t key_combos[COMBO_COUNT];
-
 #define TIM_isrt18 { \
 [_ALPHA0] = MKLAYOUT( \
   _______,         TD(CLOSE_QUIT),  TD(UNDO_REDO),    TD(COPY_PASTE),   _______,       MO(_SELECT),    LOCKSCRN, _______,      TD(FLAG_ARCHIVE), TD(BOOKMARK),     TD(SCREENSHOT),    _______, \
@@ -165,16 +161,16 @@ combo_t key_combos[COMBO_COUNT];
 ), \
  \
 [_SYSTEM] = MKLAYOUT( \
-  _______, _______, _______, _______, _______, _______, _______, _______,       _______,       _______,       _______, _______, \
-  _______, KC_GRV,  KC_DEL,  KC_CAPS, _______, _______, _______, _______,       CAPS_WORD,     OSM(MOD_LALT), _______, _______, \
-  KC_ESC,  KC_TAB,  KC_BSPC, KC_ENT,  _______, _______, _______, _______,       LSFT(KC_COMM), LSFT(KC_DOT),  XXXXXXX, _______, \
-  _______, _______, _______, _______, _______, _______,          OSM(MOD_LGUI), OSM(MOD_LCTL), _______,       _______, _______ \
+  _______, _______, _______, _______,   _______, _______, _______, _______,       _______,       _______,       _______, _______, \
+  _______, KC_GRV,  KC_DEL,  CAPS_WORD, _______, _______, _______, _______,       KC_CAPS,       OSM(MOD_LALT), _______, _______, \
+  KC_ESC,  KC_TAB,  KC_BSPC, KC_ENT,    _______, _______, _______, _______,       LSFT(KC_COMM), LSFT(KC_DOT),  XXXXXXX, _______, \
+  _______, _______, _______, _______,   _______, _______,          OSM(MOD_LGUI), OSM(MOD_LCTL), _______,       _______, _______ \
 ), \
  \
 [_BOARD] = MKLAYOUT( \
   _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,        _______, \
   _______, RGB_SAI, RGB_VAI, RGB_HUI, RGB_SPI, _______, _______, _______, _______, _______, RESET,          _______, \
-  RGB_TOG, RGB_SAD, RGB_VAD, RGB_HUD, RGB_SPD, _______, _______, _______, RGB_MOD, XXXXXXX, RGB_MODE_PLAIN, _______, \
+  RGB_TOG, RGB_SAD, RGB_VAD, RGB_HUD, RGB_SPD, _______, _______, _______, RGB_MOD, XXXXXXX, RGB_MODE_PLAIN, DEBUG, \
   _______, _______, _______, _______, _______, _______,          _______, _______, _______, _______,        _______ \
 ), \
  \
