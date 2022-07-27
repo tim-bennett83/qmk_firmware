@@ -13,7 +13,27 @@ const uint16_t PROGMEM enter_combo[] = {CMD_T(KC_J), OPT_T(KC_U), CTL_T(KC_B), C
 const uint16_t PROGMEM colon_combo[] = {CMD_T(KC_J), CTL_T(KC_B), COMBO_END};
 const uint16_t PROGMEM quote_combo[] = {LT(_SYM2, KC_S), LT(_FKEYS, KC_T), LT(_BOARD, KC_E), COMBO_END};
 const uint16_t PROGMEM scln_combo[] = {LT(_SYM2, KC_S), LT(_SYM3, KC_N), LT(_SYSTEM, KC_A), COMBO_END};
+const uint16_t PROGMEM zero_combo[] = {LT(_MEDIA, KC_R), LT(_FKEYS, KC_T), LT(_SYM1, KC_O), COMBO_END};
+const uint16_t PROGMEM four_combo[] = {LT(_MEDIA, KC_R), LT(_FKEYS, KC_T), LT(_SYM3, KC_N), COMBO_END};
+const uint16_t PROGMEM five_combo[] = {LT(_MEDIA, KC_R), LT(_FKEYS, KC_T), LT(_BOARD, KC_E), COMBO_END};
+const uint16_t PROGMEM six_combo[] = {LT(_MEDIA, KC_R), LT(_FKEYS, KC_T), LT(_SYSTEM, KC_A), COMBO_END};
+const uint16_t PROGMEM seven_combo[] = {LT(_MEDIA, KC_R), LT(_FKEYS, KC_T), CMD_T(KC_J), COMBO_END};
+const uint16_t PROGMEM eight_combo[] = {LT(_MEDIA, KC_R), LT(_FKEYS, KC_T), OPT_T(KC_U), COMBO_END};
+const uint16_t PROGMEM nine_combo[] = {LT(_MEDIA, KC_R), LT(_FKEYS, KC_T), CTL_T(KC_B), COMBO_END};
+const uint16_t PROGMEM plus_combo[] = {LT(_SYM2, KC_S), LT(_FKEYS, KC_T), CMD_T(KC_J), COMBO_END};
+const uint16_t PROGMEM astsk_combo[] = {LT(_SYM2, KC_S), LT(_FKEYS, KC_T), OPT_T(KC_U), COMBO_END};
+const uint16_t PROGMEM tilde_combo[] = {LT(_SYM2, KC_S), LT(_FKEYS, KC_T), CTL_T(KC_B), COMBO_END};
+const uint16_t PROGMEM slash_combo[] = {LT(_SYM2, KC_S), LT(_FKEYS, KC_T), LT(_SYM3, KC_N), COMBO_END};
 const uint16_t PROGMEM eql_combo[] = {CTL_T(KC_C), LT(_SYM3, KC_N), LT(_SYSTEM, KC_A), COMBO_END};
+const uint16_t PROGMEM exclm_combo[] = {LT(_SYM2, KC_S), LT(_FKEYS, KC_T), LT(_SYSTEM, KC_A), COMBO_END};
+const uint16_t PROGMEM quest_combo[] = {LT(_SYM2, KC_S), LT(_FKEYS, KC_T), LT(_SYM1, KC_O), COMBO_END};
+const uint16_t PROGMEM at_combo[] = {LT(_BOARD, KC_E), LT(_SYSTEM, KC_A), CTL_T(KC_C), COMBO_END};
+const uint16_t PROGMEM pound_combo[] = {LT(_BOARD, KC_E), LT(_SYSTEM, KC_A), OPT_T(KC_L), COMBO_END};
+const uint16_t PROGMEM dollar_combo[] = {LT(_BOARD, KC_E), LT(_SYSTEM, KC_A), CMD_T(KC_D), COMBO_END};
+const uint16_t PROGMEM grave_combo[] = {LT(_BOARD, KC_E), LT(_SYSTEM, KC_A), LT(_NUMS, KC_I), COMBO_END};
+const uint16_t PROGMEM percent_combo[] = {LT(_BOARD, KC_E), LT(_SYSTEM, KC_A), LT(_SYM2, KC_S), COMBO_END};
+const uint16_t PROGMEM caret_combo[] = {LT(_BOARD, KC_E), LT(_SYSTEM, KC_A), LT(_MEDIA, KC_R), COMBO_END};
+const uint16_t PROGMEM amp_combo[] = {LT(_BOARD, KC_E), LT(_SYSTEM, KC_A),LT(_FKEYS, KC_T), COMBO_END};
 
 combo_t key_combos[COMBO_COUNT] = {
     COMBO(bspc_combo, KC_BSPC),
@@ -21,7 +41,27 @@ combo_t key_combos[COMBO_COUNT] = {
     COMBO(colon_combo, LSFT(KC_SCLN)),
     COMBO(quote_combo, LSFT(KC_QUOT)),
     COMBO(scln_combo, KC_SCLN),
-    COMBO(eql_combo, KC_EQL)
+    COMBO(zero_combo, KC_0),
+    COMBO(four_combo, KC_4),
+    COMBO(five_combo, KC_5),
+    COMBO(six_combo, KC_6),
+    COMBO(seven_combo, KC_7),
+    COMBO(eight_combo, KC_8),
+    COMBO(nine_combo, KC_9),
+    COMBO(astsk_combo, LSFT(KC_8)),
+    COMBO(tilde_combo, LSFT(KC_GRV)),
+    COMBO(plus_combo, LSFT(KC_EQL)),
+    COMBO(slash_combo, KC_SLSH),
+    COMBO(eql_combo, KC_EQL),
+    COMBO(exclm_combo, LSFT(KC_1)),
+    COMBO(quest_combo, LSFT(KC_SLSH)),
+    COMBO(at_combo, LSFT(KC_2)),
+    COMBO(pound_combo, LSFT(KC_3)),
+    COMBO(dollar_combo, LSFT(KC_4)),
+    COMBO(grave_combo, KC_GRV),
+    COMBO(percent_combo, LSFT(KC_5)),
+    COMBO(caret_combo, LSFT(KC_6)),
+    COMBO(amp_combo, LSFT(KC_7))
 };
 
 qk_tap_dance_action_t tap_dance_actions[] = {
