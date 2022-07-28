@@ -21,71 +21,19 @@ enum layer_names {
 };
 
 enum custom_keycodes {
-	ASSIGN = SAFE_RANGE,
-	NOT_EQUAL
+  ASSIGN = SAFE_RANGE,
+  NOT_EQUAL
 };
 
 // Defines for task manager and such
 #define LOCKSCRN LCTL(LGUI(KC_Q))
 
-// Tap dance definitions
-typedef enum {
-    TD_NONE,
-    TD_UNKNOWN,
-    TD_SINGLE_TAP,
-    TD_SINGLE_HOLD,
-    TD_DOUBLE_TAP,
-    TD_DOUBLE_HOLD,
-    TD_DOUBLE_SINGLE_TAP, // Send two single taps
-    TD_TRIPLE_TAP,
-    TD_TRIPLE_HOLD
-} td_state_t;
-
-// Tap dance enums
-enum {
-    UNDO_REDO,
-    CLOSE_QUIT,
-    COPY_PASTE,
-    FLAG_ARCHIVE,
-    BOOKMARK,
-    SCREENSHOT,
-    HIDE,
-    CTL_T_V,
-    ALT_T_W,
-    ALT_T_Z,
-    CTL_T_Q
-};
-
-td_state_t cur_dance(qk_tap_dance_state_t *state);
-void undo_redo_finished(qk_tap_dance_state_t *state, void *user_data);
-void undo_redo_reset(qk_tap_dance_state_t *state, void *user_data);
-void close_quit_finished(qk_tap_dance_state_t *state, void *user_data);
-void close_quit_reset(qk_tap_dance_state_t *state, void *user_data);
-void copy_paste_finished(qk_tap_dance_state_t *state, void *user_data);
-void copy_paste_reset(qk_tap_dance_state_t *state, void *user_data);
-void flag_archive_finished(qk_tap_dance_state_t *state, void *user_data);
-void flag_archive_reset(qk_tap_dance_state_t *state, void *user_data);
-void bookmark_finished(qk_tap_dance_state_t *state, void *user_data);
-void bookmark_reset(qk_tap_dance_state_t *state, void *user_data);
-void screenshot_finished(qk_tap_dance_state_t *state, void *user_data);
-void screenshot_reset(qk_tap_dance_state_t *state, void *user_data);
-void hide_finished(qk_tap_dance_state_t *state, void *user_data);
-void hide_reset(qk_tap_dance_state_t *state, void *user_data);
-void ctl_t_v_finished(qk_tap_dance_state_t *state, void *user_data);
-void ctl_t_v_reset(qk_tap_dance_state_t *state, void *user_data);
-void alt_t_w_finished(qk_tap_dance_state_t *state, void *user_data);
-void alt_t_w_reset(qk_tap_dance_state_t *state, void *user_data);
-void alt_t_z_finished(qk_tap_dance_state_t *state, void *user_data);
-void alt_t_z_reset(qk_tap_dance_state_t *state, void *user_data);
-void ctl_t_q_finished(qk_tap_dance_state_t *state, void *user_data);
-void ctl_t_q_reset(qk_tap_dance_state_t *state, void *user_data);
-
 #define TIM_isrt18 { \
 [_ALPHA0] = MKLAYOUT( \
-  _______,         TD(CLOSE_QUIT),  TD(UNDO_REDO),    TD(COPY_PASTE),   _______,       MO(_SELECT),    LOCKSCRN, _______,      TD(FLAG_ARCHIVE), TD(BOOKMARK),     TD(SCREENSHOT),    _______, \
+  _______,         _______,  _______,    _______,   _______,       MO(_SELECT),    LOCKSCRN, _______,      _______, _______,     _______,    _______, \
   KC_ENT,          CTL_T(KC_C),     OPT_T(KC_L),      CMD_T(KC_D),      _______,       _______,        _______,  _______,      CMD_T(KC_J),      OPT_T(KC_U),      CTL_T(KC_B),       KC_BSPC, \
-  LT(_NUMS, KC_I), LT(_SYM2, KC_S), LT(_MEDIA, KC_R), LT(_FKEYS, KC_T), TD(HIDE),      _______,        _______,  TD(HIDE),     LT(_SYM3, KC_N),  LT(_BOARD, KC_E), LT(_SYSTEM, KC_A), LT(_SYM1, KC_O), \
-  TD(SCREENSHOT),  TD(BOOKMARK),    TD(FLAG_ARCHIVE), OSM(MOD_LSFT),    MEH_T(KC_SPC), TG(_COMPANION),           OSL(_ALPHA1), OSL(_ALPHAC),     TD(COPY_PASTE),   TD(UNDO_REDO),     TD(CLOSE_QUIT) \
+  LT(_NUMS, KC_I), LT(_SYM2, KC_S), LT(_MEDIA, KC_R), LT(_FKEYS, KC_T), _______,      _______,        _______,  _______,     LT(_SYM3, KC_N),  LT(_BOARD, KC_E), LT(_SYSTEM, KC_A), LT(_SYM1, KC_O), \
+  _______,  _______,    _______, OSM(MOD_LSFT),    MEH_T(KC_SPC), TG(_COMPANION),           OSL(_ALPHA1), OSL(_ALPHAC),     _______,   _______,     _______ \
 ), \
  \
 [_ALPHA1] = MKLAYOUT( \
@@ -97,7 +45,7 @@ void ctl_t_q_reset(qk_tap_dance_state_t *state, void *user_data);
  \
 [_ALPHAC] = MKLAYOUT( \
   XXXXXXX,    XXXXXXX,      XXXXXXX,     XXXXXXX,        XXXXXXX,       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,        XXXXXXX,     XXXXXXX,     XXXXXXX, \
-  XXXXXXX,    TD(CTL_T_V),  TD(ALT_T_W), CMD_T(KC_MINS), XXXXXXX,       XXXXXXX, XXXXXXX, XXXXXXX, CMD_T(KC_QUOT), TD(ALT_T_Z), TD(CTL_T_Q), XXXXXXX, \
+  XXXXXXX,    _______,  _______, CMD_T(KC_MINS), XXXXXXX,       XXXXXXX, XXXXXXX, XXXXXXX, CMD_T(KC_QUOT), _______, _______, XXXXXXX, \
   LSFT(KC_Y), LSFT(KC_M),   LSFT(KC_H),  LSFT(KC_G),     XXXXXXX,       XXXXXXX, XXXXXXX, XXXXXXX, LSFT(KC_P),     LSFT(KC_F),  LSFT(KC_K),  LSFT(KC_X), \
   XXXXXXX,    XXXXXXX,      XXXXXXX,     XXXXXXX,        XXXXXXX,       XXXXXXX,          XXXXXXX, XXXXXXX,        XXXXXXX,     XXXXXXX,     XXXXXXX \
 ), \
