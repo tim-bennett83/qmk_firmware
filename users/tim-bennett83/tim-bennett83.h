@@ -30,10 +30,10 @@ enum custom_keycodes {
 
 #define TIM_isrt18 { \
 [_ALPHA0] = MKLAYOUT( \
-  _______,         _______,  _______,    _______,   _______,       MO(_SELECT),    LOCKSCRN, _______,      _______, _______,     _______,    _______, \
-  KC_ENT,          CTL_T(KC_C),     OPT_T(KC_L),      CMD_T(KC_D),      _______,       _______,        _______,  _______,      CMD_T(KC_J),      OPT_T(KC_U),      CTL_T(KC_B),       KC_BSPC, \
-  LT(_NUMS, KC_I), LT(_SYM2, KC_S), LT(_MEDIA, KC_R), LT(_FKEYS, KC_T), _______,      _______,        _______,  _______,     LT(_SYM3, KC_N),  LT(_BOARD, KC_E), LT(_SYSTEM, KC_A), LT(_SYM1, KC_O), \
-  _______,  _______,    _______, OSM(MOD_LSFT),    MEH_T(KC_SPC), TG(_COMPANION),           OSL(_ALPHA1), OSL(_ALPHAC),     _______,   _______,     _______ \
+  LGUI(LSFT(LCTL(KC_4))), LGUI(KC_W),       LGUI(KC_V),       LGUI(KC_C),       _______,       MO(_SELECT),    LOCKSCRN, _______,      _______,          _______,     _______,    _______, \
+  KC_ENT,                 CTL_T(KC_C),      OPT_T(KC_L),      CMD_T(KC_D),      LGUI(KC_Q),    _______,        _______,  _______,      CMD_T(KC_J),      OPT_T(KC_U),      CTL_T(KC_B),       KC_BSPC, \
+  KC_I,                   KC_S,             LT(_MEDIA, KC_R), LT(_FKEYS, KC_T), _______,       _______,        _______,  _______,      LT(_SYM3, KC_N),  LT(_BOARD, KC_E), LT(_SYSTEM, KC_A), LT(_SYM1, KC_O), \
+  LGUI(LSFT(KC_4)),       LGUI(LCTL(KC_A)), LSFT(LGUI(KC_L)), OSM(MOD_LSFT),    MEH_T(KC_SPC), TG(_COMPANION),           OSL(_ALPHA1), OSL(_ALPHAC),     _______,   _______,     _______ \
 ), \
  \
 [_ALPHA1] = MKLAYOUT( \
