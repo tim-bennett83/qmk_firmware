@@ -20,6 +20,11 @@ enum layer_names {
     _GAME1
 };
 
+enum custom_keycodes {
+	ASSIGN = SAFE_RANGE,
+	NOT_EQUAL
+};
+
 // Defines for task manager and such
 #define LOCKSCRN LCTL(LGUI(KC_Q))
 

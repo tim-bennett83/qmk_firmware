@@ -5,7 +5,19 @@
 static td_state_t td_state;
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-  return true;
+	switch (keycode) {
+		case ASSIGN:
+			if (record->event.pressed) {
+				SEND_STRING(":=");
+			}
+			break;
+		case NOT_EQUAL:
+			if (record->event.pressed) {
+				SEND_STRING("!=");
+			}
+			break;
+	}
+	return true;
 }
 
 const uint16_t PROGMEM bspc_combo[] = {CTL_T(KC_C), OPT_T(KC_L), CMD_T(KC_D), COMBO_END};
@@ -53,6 +65,20 @@ const uint16_t PROGMEM tg_nums_combo[] = {LT(_SYM3, KC_N), LT(_BOARD, KC_E), LT(
 const uint16_t PROGMEM one_combo[] = {LT(_SYM3, KC_N), LT(_BOARD, KC_E), LT(_SYM2, KC_S), COMBO_END};
 const uint16_t PROGMEM two_combo[] = {LT(_SYM3, KC_N), LT(_BOARD, KC_E), LT(_MEDIA, KC_R), COMBO_END};
 const uint16_t PROGMEM three_combo[] = {LT(_SYM3, KC_N), LT(_BOARD, KC_E), LT(_FKEYS, KC_T), COMBO_END};
+const uint16_t PROGMEM sft_tab_combo[] = {OPT_T(KC_U), CTL_T(KC_B), CTL_T(KC_C), COMBO_END};
+const uint16_t PROGMEM up_combo[] = {OPT_T(KC_U), CTL_T(KC_B), OPT_T(KC_L), COMBO_END};
+const uint16_t PROGMEM ctl_p_combo[] = {OPT_T(KC_U), CTL_T(KC_B), CMD_T(KC_D), COMBO_END};
+const uint16_t PROGMEM tab_combo[] = {OPT_T(KC_U), CTL_T(KC_B), LT(_SYM2, KC_S), COMBO_END};
+const uint16_t PROGMEM down_combo[] = {OPT_T(KC_U), CTL_T(KC_B), LT(_MEDIA, KC_R), COMBO_END};
+const uint16_t PROGMEM ctl_n_combo[] = {OPT_T(KC_U), CTL_T(KC_B), LT(_FKEYS, KC_T), COMBO_END};
+const uint16_t PROGMEM left_tab_combo[] = {OPT_T(KC_L), CMD_T(KC_D), CMD_T(KC_J), COMBO_END};
+const uint16_t PROGMEM right_tab_combo[] = {OPT_T(KC_L), CMD_T(KC_D), OPT_T(KC_U), COMBO_END};
+const uint16_t PROGMEM sopt_up_combo[] = {OPT_T(KC_L), CMD_T(KC_D), CTL_T(KC_B), COMBO_END};
+const uint16_t PROGMEM back_combo[] = {OPT_T(KC_L), CMD_T(KC_D), LT(_SYM3, KC_N), COMBO_END};
+const uint16_t PROGMEM fwd_combo[] = {OPT_T(KC_L), CMD_T(KC_D), LT(_BOARD, KC_E), COMBO_END};
+const uint16_t PROGMEM sopt_down_combo[] = {OPT_T(KC_L), CMD_T(KC_D), LT(_SYSTEM, KC_A), COMBO_END};
+const uint16_t PROGMEM assign_combo[] = {CMD_T(KC_J), CTL_T(KC_B), CTL_T(KC_C), COMBO_END};
+const uint16_t PROGMEM not_equal_combo[] = {CMD_T(KC_J), CTL_T(KC_B), LT(_SYM2, KC_S), COMBO_END};
 
 combo_t key_combos[COMBO_COUNT] = {
     COMBO(bspc_combo, KC_BSPC),
@@ -99,7 +125,21 @@ combo_t key_combos[COMBO_COUNT] = {
     COMBO(tg_nums_combo, TG(_NUMS)),
     COMBO(one_combo, KC_1),
     COMBO(two_combo, KC_2),
-    COMBO(three_combo, KC_3)
+    COMBO(three_combo, KC_3),
+    COMBO(sft_tab_combo, LSFT(KC_TAB)),
+    COMBO(up_combo, KC_UP),
+    COMBO(ctl_p_combo, LCTL(KC_P)),
+    COMBO(tab_combo, KC_TAB),
+    COMBO(down_combo, KC_DOWN),
+    COMBO(ctl_n_combo, LCTL(KC_N)),
+    COMBO(left_tab_combo, LSFT(LGUI(KC_LBRC))),
+    COMBO(right_tab_combo, LSFT(LGUI(KC_RBRC))),
+    COMBO(sopt_up_combo, LSFT(LALT(KC_UP))),
+    COMBO(back_combo, LGUI(KC_LBRC)),
+    COMBO(fwd_combo, LGUI(KC_RBRC)),
+    COMBO(sopt_down_combo, LSFT(LALT(KC_DOWN))),
+    COMBO(assign_combo, ASSIGN),
+    COMBO(not_equal_combo, NOT_EQUAL)
 };
 
 qk_tap_dance_action_t tap_dance_actions[] = {
