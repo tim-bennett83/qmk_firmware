@@ -4,6 +4,8 @@ enum layer_names {
     _ALPHA0,
     _ALPHA1,
     _ALPHAC,
+    _GAME0,
+    _GAME1,
     _SYM1,
     _SYM2,
     _SYM3,
@@ -15,14 +17,16 @@ enum layer_names {
     _COMPANION,
     _SYSTEM,
     _BOARD,
-    _SELECT,
-    _GAME0,
-    _GAME1
+    _SELECT
 };
 
 enum custom_keycodes {
   ASSIGN = SAFE_RANGE,
-  NOT_EQUAL
+  NOT_EQUAL,
+  TO_SELECT,
+  CLEAR_LAYERS,
+  TG_ARROWS,
+  TG_MOUSE
 };
 
 // Defines for task manager and such
@@ -30,10 +34,10 @@ enum custom_keycodes {
 
 #define TIM_isrt18 { \
 [_ALPHA0] = MKLAYOUT( \
-  LGUI(LSFT(LCTL(KC_4))), LGUI(KC_W),       LGUI(KC_V),       LGUI(KC_C),       _______,       MO(_SELECT),    LOCKSCRN, _______,      _______,          _______,     _______,    _______, \
+  LGUI(LSFT(LCTL(KC_4))), LGUI(KC_W),       LGUI(KC_V),       LGUI(KC_C),       _______,       MO(_SELECT),    LOCKSCRN, _______,      _______,          _______,          _______,    _______, \
   KC_ENT,                 CTL_T(KC_C),      OPT_T(KC_L),      CMD_T(KC_D),      LGUI(KC_Q),    _______,        _______,  _______,      CMD_T(KC_J),      OPT_T(KC_U),      CTL_T(KC_B),       KC_BSPC, \
   KC_I,                   KC_S,             LT(_MEDIA, KC_R), LT(_FKEYS, KC_T), _______,       _______,        _______,  _______,      LT(_SYM3, KC_N),  LT(_BOARD, KC_E), LT(_SYSTEM, KC_A), LT(_SYM1, KC_O), \
-  LGUI(LSFT(KC_4)),       LGUI(LCTL(KC_A)), LSFT(LGUI(KC_L)), OSM(MOD_LSFT),    MEH_T(KC_SPC), TG(_COMPANION),           OSL(_ALPHA1), OSL(_ALPHAC),     _______,   _______,     _______ \
+  LGUI(LSFT(KC_4)),       LGUI(LCTL(KC_A)), LSFT(LGUI(KC_L)), OSM(MOD_LSFT),    MEH_T(KC_SPC), TG(_COMPANION),           OSL(_ALPHA1), OSL(_ALPHAC),     _______,          _______,     _______ \
 ), \
  \
 [_ALPHA1] = MKLAYOUT( \
@@ -75,7 +79,7 @@ enum custom_keycodes {
   _______, _______, _______,       _______, _______, _______, _______, _______,       _______,       _______, _______, _______, \
   _______, _______, OSM(MOD_LALT), _______, _______, _______, _______, _______,       KC_7,          KC_8,    KC_9,    _______, \
   XXXXXXX, KC_1,    KC_2,          KC_3,    _______, _______, _______, _______,       KC_4,          KC_5,    KC_6,    KC_0, \
-  _______, _______, _______,       _______, _______, _______,          OSM(MOD_LGUI), OSM(MOD_LCTL), _______, _______, _______ \
+  _______, _______, _______,       _______, KC_DOT,  _______,          OSM(MOD_LGUI), OSM(MOD_LCTL), _______, _______, _______ \
 ), \
  \
 [_FKEYS] = MKLAYOUT( \
