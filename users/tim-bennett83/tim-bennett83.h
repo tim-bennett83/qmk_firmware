@@ -2,6 +2,7 @@
 
 enum layer_names {
     _ALPHA0,
+    _NUMS,
     _ALPHA1,
     _ALPHAC,
     _GAME0,
@@ -9,7 +10,6 @@ enum layer_names {
     _SYM1,
     _SYM2,
     _SYM3,
-    _NUMS,
     _FKEYS,
     _ARROWS,
     _MOUSE,
@@ -40,18 +40,39 @@ enum custom_keycodes {
   LGUI(LSFT(KC_4)),       LGUI(LCTL(KC_A)), LSFT(LGUI(KC_L)), OSM(MOD_LSFT),    MEH_T(KC_SPC), TG(_COMPANION),           OSL(_ALPHA1), OSL(_ALPHAC),     _______,          _______,     _______ \
 ), \
  \
+[_NUMS] = MKLAYOUT( \
+  _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, \
+  _______, _______, _______, _______, _______, _______, _______, _______, KC_7,    KC_8,    KC_9,    _______, \
+  _______, KC_1,    KC_2,    KC_3,    _______, _______, _______, _______, KC_4,    KC_5,    KC_6,    KC_0, \
+  _______, _______, _______, _______, _______, _______,          _______, _______, _______, _______, _______ \
+), \
+ \
 [_ALPHA1] = MKLAYOUT( \
   XXXXXXX, XXXXXXX,      XXXXXXX,     XXXXXXX,        XXXXXXX,       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,       XXXXXXX,          XXXXXXX,     XXXXXXX, \
   XXXXXXX, CTL_T(KC_V),  OPT_T(KC_W), CMD_T(KC_COMM), XXXXXXX,       XXXXXXX, XXXXXXX, XXXXXXX, CMD_T(KC_DOT), OPT_T(KC_Z),      CTL_T(KC_Q), XXXXXXX, \
   KC_Y,    KC_M,         KC_H,        KC_G,           XXXXXXX,       XXXXXXX, XXXXXXX, XXXXXXX, KC_P,          KC_F,             KC_K,        KC_X, \
-  XXXXXXX, XXXXXXX,      XXXXXXX,     XXXXXXX,        XXXXXXX,       XXXXXXX,          XXXXXXX, XXXXXXX,       XXXXXXX,          XXXXXXX,     XXXXXXX \
+  XXXXXXX, XXXXXXX,      XXXXXXX,     _______,        _______,       XXXXXXX,          XXXXXXX, _______,       XXXXXXX,          XXXXXXX,     XXXXXXX \
 ), \
  \
 [_ALPHAC] = MKLAYOUT( \
   XXXXXXX,    XXXXXXX,      XXXXXXX,     XXXXXXX,        XXXXXXX,       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,        XXXXXXX,     XXXXXXX,     XXXXXXX, \
   XXXXXXX,    LSFT(KC_V),   LSFT(KC_W),  CMD_T(KC_MINS), XXXXXXX,       XXXXXXX, XXXXXXX, XXXXXXX, CMD_T(KC_QUOT), LSFT(KC_Z),  LSFT(KC_Q), XXXXXXX, \
   LSFT(KC_Y), LSFT(KC_M),   LSFT(KC_H),  LSFT(KC_G),     XXXXXXX,       XXXXXXX, XXXXXXX, XXXXXXX, LSFT(KC_P),     LSFT(KC_F),  LSFT(KC_K),  LSFT(KC_X), \
-  XXXXXXX,    XXXXXXX,      XXXXXXX,     XXXXXXX,        XXXXXXX,       XXXXXXX,          XXXXXXX, XXXXXXX,        XXXXXXX,     XXXXXXX,     XXXXXXX \
+  XXXXXXX,    XXXXXXX,      XXXXXXX,     _______,        _______,       XXXXXXX,          _______, XXXXXXX,        XXXXXXX,     XXXXXXX,     XXXXXXX \
+), \
+ \
+[_GAME0] = MKLAYOUT( \
+  KC_ESC,  KC_Z,    KC_X,    KC_C,    KC_V,   KC_B,       _______, _______, _______, _______, _______, TO(_ALPHA0), \
+  KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,   KC_T,       _______, _______, _______, _______, _______, _______, \
+  KC_LSFT, KC_A,    KC_S,    KC_D,    KC_F,   KC_G,       _______, _______, _______, _______, _______, _______, \
+  KC_LCTL, KC_LALT, KC_LGUI, _______, KC_SPC, TT(_GAME1),          _______, _______, _______, _______, _______ \
+), \
+ \
+[_GAME1] = MKLAYOUT( \
+  KC_GRV,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    _______, _______, _______, _______, _______, TO(_ALPHA0), \
+  KC_HOME, KC_PGUP, KC_COMM, KC_DOT,  _______, _______, _______, _______, _______, _______, _______, _______, \
+  KC_END,  KC_PGDN, KC_BSPC, KC_ENT,  _______, _______, _______, _______, _______, _______, _______, _______, \
+  KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   _______,          _______, _______, _______, _______, _______ \
 ), \
  \
 [_SYM1] = MKLAYOUT( \
@@ -73,13 +94,6 @@ enum custom_keycodes {
   _______,       LSFT(KC_2), LSFT(KC_3),   LSFT(KC_4), _______, _______, _______, _______,       _______,       OSM(MOD_LALT), _______, _______, \
   LSFT(KC_MINS), LSFT(KC_5), LSFT(KC_6),   LSFT(KC_7), _______, _______, _______, _______,       XXXXXXX,       TO(_ARROWS),   _______, _______, \
   _______,       _______,    _______,      _______,    _______, _______,          OSM(MOD_LGUI), OSM(MOD_LCTL), _______,       _______, _______ \
-), \
- \
-[_NUMS] = MKLAYOUT( \
-  _______, _______, _______,       _______, _______, _______, _______, _______,       _______,       _______, _______, _______, \
-  _______, _______, OSM(MOD_LALT), _______, _______, _______, _______, _______,       KC_7,          KC_8,    KC_9,    _______, \
-  XXXXXXX, KC_1,    KC_2,          KC_3,    _______, _______, _______, _______,       KC_4,          KC_5,    KC_6,    KC_0, \
-  _______, _______, _______,       _______, KC_DOT,  _______,          OSM(MOD_LGUI), OSM(MOD_LCTL), _______, _______, _______ \
 ), \
  \
 [_FKEYS] = MKLAYOUT( \
@@ -136,20 +150,6 @@ enum custom_keycodes {
   _______, _______, _______, _______, _______, _______, _______, _______, _______,    _______, _______, _______, \
   _______, _______, _______, _______, _______, _______, _______, _______, TO(_GAME0), _______, _______, _______, \
   _______, _______, _______, _______, _______, _______,          _______, _______,    _______, _______, _______ \
-), \
- \
-[_GAME0] = MKLAYOUT( \
-  KC_ESC,  KC_Z,    KC_X,    KC_C,    KC_V,   KC_B,       _______, _______, _______, _______, _______, TO(_ALPHA0), \
-  KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,   KC_T,       _______, _______, _______, _______, _______, _______, \
-  KC_LSFT, KC_A,    KC_S,    KC_D,    KC_F,   KC_G,       _______, _______, _______, _______, _______, _______, \
-  KC_LCTL, KC_LALT, KC_LGUI, _______, KC_SPC, TT(_GAME1),          _______, _______, _______, _______, _______ \
-), \
- \
-[_GAME1] = MKLAYOUT( \
-  KC_GRV,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    _______, _______, _______, _______, _______, TO(_ALPHA0), \
-  KC_HOME, KC_PGUP, KC_COMM, KC_DOT,  _______, _______, _______, _______, _______, _______, _______, _______, \
-  KC_END,  KC_PGDN, KC_BSPC, KC_ENT,  _______, _______, _______, _______, _______, _______, _______, _______, \
-  KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   _______,          _______, _______, _______, _______, _______ \
 ), \
 };
 
