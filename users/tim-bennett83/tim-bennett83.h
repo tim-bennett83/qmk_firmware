@@ -34,10 +34,10 @@ enum custom_keycodes {
 
 #define TIM_isrt18 { \
 [_ALPHA0] = MKLAYOUT( \
-  LGUI(LSFT(LCTL(KC_4))), LGUI(KC_W),       LGUI(KC_V),       LGUI(KC_C),       _______,       MO(_SELECT),    LOCKSCRN, _______,      _______,          _______,          _______,    _______, \
-  KC_ENT,                 CTL_T(KC_C),      OPT_T(KC_L),      CMD_T(KC_D),      LGUI(KC_Q),    _______,        _______,  _______,      CMD_T(KC_J),      OPT_T(KC_U),      CTL_T(KC_B),       KC_BSPC, \
-  KC_I,                   KC_S,             LT(_MEDIA, KC_R), LT(_FKEYS, KC_T), _______,       _______,        _______,  _______,      LT(_SYM3, KC_N),  LT(_BOARD, KC_E), LT(_SYSTEM, KC_A), LT(_SYM1, KC_O), \
-  LGUI(LSFT(KC_4)),       LGUI(LCTL(KC_A)), LSFT(LGUI(KC_L)), OSM(MOD_LSFT),    MEH_T(KC_SPC), TG(_COMPANION),           OSL(_ALPHA1), OSL(_ALPHAC),     _______,          _______,     _______ \
+  LGUI(LSFT(LCTL(KC_4))), LGUI(KC_W),       LGUI(KC_V),       LGUI(KC_C),       _______,       MO(_SELECT),    LOCKSCRN, _______,      _______,      _______,          _______,    _______, \
+  KC_ENT,                 CTL_T(KC_C),      OPT_T(KC_L),      CMD_T(KC_D),      LGUI(KC_Q),    _______,        _______,  _______,      CMD_T(KC_J),  OPT_T(KC_U),      CTL_T(KC_B),       KC_BSPC, \
+  KC_I,                   KC_S,             LT(_MEDIA, KC_R), LT(_FKEYS, KC_T), _______,       _______,        _______,  _______,      KC_N,         LT(_BOARD, KC_E), LT(_SYSTEM, KC_A), KC_O, \
+  LGUI(LSFT(KC_4)),       LGUI(LCTL(KC_A)), LSFT(LGUI(KC_L)), OSM(MOD_LSFT),    MEH_T(KC_SPC), TG(_COMPANION),           OSL(_ALPHA1), OSL(_ALPHAC), _______,          _______,     _______ \
 ), \
  \
 [_NUMS] = MKLAYOUT( \
@@ -73,27 +73,6 @@ enum custom_keycodes {
   KC_HOME, KC_PGUP, KC_COMM, KC_DOT,  _______, _______, _______, _______, _______, _______, _______, _______, \
   KC_END,  KC_PGDN, KC_BSPC, KC_ENT,  _______, _______, _______, _______, _______, _______, _______, _______, \
   KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   _______,          _______, _______, _______, _______, _______ \
-), \
- \
-[_SYM1] = MKLAYOUT( \
-  _______,       _______,    _______,      _______,    _______, _______, _______, _______,       _______,       _______,       _______,       _______, \
-  _______,       KC_EQL,     LSFT(KC_EQL), LSFT(KC_8), _______, _______, _______, _______,       _______,       OSM(MOD_LALT), _______,       _______, \
-  LSFT(KC_SLSH), LSFT(KC_1), LSFT(KC_9),   LSFT(KC_0), _______, _______, _______, _______,       KC_SLSH,       LSFT(KC_GRV),  LSFT(KC_SCLN), XXXXXXX, \
-  _______,       _______,    _______,      _______,    _______, _______,          OSM(MOD_LGUI), OSM(MOD_LCTL), _______,       _______,       _______ \
-), \
- \
-[_SYM2] = MKLAYOUT( \
-  _______, _______, _______,       _______,       _______, _______, _______, _______,       _______,       _______,       _______,       _______, \
-  _______, _______, OSM(MOD_LALT), _______,       _______, _______, _______, _______,       KC_LBRC,       KC_RBRC,       LSFT(KC_BSLS), _______, \
-  _______, XXXXXXX, _______,       LSFT(KC_QUOT), _______, _______, _______, _______,       LSFT(KC_LBRC), LSFT(KC_RBRC), KC_SCLN,       KC_BSLS, \
-  _______, _______, _______,       _______,       _______, _______,          OSM(MOD_LGUI), OSM(MOD_LCTL), _______,       _______,       _______ \
-), \
- \
-[_SYM3] = MKLAYOUT( \
-  _______,       _______,    _______,      _______,    _______, _______, _______, _______,       _______,       _______,       _______, _______, \
-  _______,       LSFT(KC_2), LSFT(KC_3),   LSFT(KC_4), _______, _______, _______, _______,       _______,       OSM(MOD_LALT), _______, _______, \
-  LSFT(KC_MINS), LSFT(KC_5), LSFT(KC_6),   LSFT(KC_7), _______, _______, _______, _______,       XXXXXXX,       TO(_ARROWS),   _______, _______, \
-  _______,       _______,    _______,      _______,    _______, _______,          OSM(MOD_LGUI), OSM(MOD_LCTL), _______,       _______, _______ \
 ), \
  \
 [_FKEYS] = MKLAYOUT( \
