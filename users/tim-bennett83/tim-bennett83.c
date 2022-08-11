@@ -83,11 +83,9 @@ const uint16_t PROGMEM one_combo[] = {KC_N, LT(_BOARD, KC_E), KC_S, COMBO_END};
 const uint16_t PROGMEM two_combo[] = {KC_N, LT(_BOARD, KC_E), LT(_MEDIA, KC_R), COMBO_END};
 const uint16_t PROGMEM three_combo[] = {KC_N, LT(_BOARD, KC_E), LT(_FKEYS, KC_T), COMBO_END};
 const uint16_t PROGMEM sft_tab_combo[] = {OPT_T(KC_U), CTL_T(KC_B), CTL_T(KC_C), COMBO_END};
-const uint16_t PROGMEM up_combo[] = {OPT_T(KC_U), CTL_T(KC_B), OPT_T(KC_L), COMBO_END};
 const uint16_t PROGMEM ctl_p_combo[] = {OPT_T(KC_U), CTL_T(KC_B), CMD_T(KC_D), COMBO_END};
 const uint16_t PROGMEM ctl_left_combo[] = {OPT_T(KC_U), CTL_T(KC_B), KC_I, COMBO_END};
 const uint16_t PROGMEM tab_combo[] = {OPT_T(KC_U), CTL_T(KC_B), KC_S, COMBO_END};
-const uint16_t PROGMEM down_combo[] = {OPT_T(KC_U), CTL_T(KC_B), LT(_MEDIA, KC_R), COMBO_END};
 const uint16_t PROGMEM ctl_n_combo[] = {OPT_T(KC_U), CTL_T(KC_B), LT(_FKEYS, KC_T), COMBO_END};
 const uint16_t PROGMEM left_tab_combo[] = {OPT_T(KC_L), CMD_T(KC_D), CMD_T(KC_J), COMBO_END};
 const uint16_t PROGMEM right_tab_combo[] = {OPT_T(KC_L), CMD_T(KC_D), OPT_T(KC_U), COMBO_END};
@@ -96,7 +94,11 @@ const uint16_t PROGMEM back_combo[] = {OPT_T(KC_L), CMD_T(KC_D), KC_N, COMBO_END
 const uint16_t PROGMEM fwd_combo[] = {OPT_T(KC_L), CMD_T(KC_D), LT(_BOARD, KC_E), COMBO_END};
 const uint16_t PROGMEM sopt_down_combo[] = {OPT_T(KC_L), CMD_T(KC_D), LT(_SYSTEM, KC_A), COMBO_END};
 const uint16_t PROGMEM assign_combo[] = {CMD_T(KC_J), CTL_T(KC_B), CTL_T(KC_C), COMBO_END};
-const uint16_t PROGMEM not_equal_combo[] = {CMD_T(KC_J), CTL_T(KC_B), KC_S, COMBO_END};
+const uint16_t PROGMEM up_combo[] = {CMD_T(KC_J), CTL_T(KC_B), OPT_T(KC_L), COMBO_END};
+const uint16_t PROGMEM down_combo[] = {CMD_T(KC_J), CTL_T(KC_B), LT(_MEDIA, KC_R), COMBO_END};
+const uint16_t PROGMEM left_combo[] = {CMD_T(KC_J), CTL_T(KC_B), KC_S, COMBO_END};
+const uint16_t PROGMEM right_combo[] = {CMD_T(KC_J), CTL_T(KC_B), LT(_FKEYS, KC_T), COMBO_END};
+const uint16_t PROGMEM not_equal_combo[] = {CMD_T(KC_J), CTL_T(KC_B), CMD_T(KC_D), COMBO_END};
 const uint16_t PROGMEM cut_combo[] = {CTL_T(KC_C), CMD_T(KC_D), CMD_T(KC_J), COMBO_END};
 const uint16_t PROGMEM copy_combo[] = {CTL_T(KC_C), CMD_T(KC_D), OPT_T(KC_U), COMBO_END};
 const uint16_t PROGMEM paste_combo[] = {CTL_T(KC_C), CMD_T(KC_D), CTL_T(KC_B), COMBO_END};
@@ -179,6 +181,8 @@ combo_t key_combos[COMBO_COUNT] = {
     COMBO(ctl_left_combo, LCTL(KC_LEFT)),
     COMBO(tab_combo, KC_TAB),
     COMBO(down_combo, KC_DOWN),
+    COMBO(left_combo, KC_LEFT),
+    COMBO(right_combo, KC_RIGHT),
     COMBO(ctl_n_combo, LCTL(KC_N)),
     COMBO(left_tab_combo, LSFT(LGUI(KC_LBRC))),
     COMBO(right_tab_combo, LSFT(LGUI(KC_RBRC))),
