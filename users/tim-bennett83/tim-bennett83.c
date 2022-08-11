@@ -28,6 +28,11 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         layer_invert(_MOUSE);
       }
       break;
+    case TG_SYSTEM:
+      if (record->event.pressed) {
+        layer_invert(_SYSTEM);
+      }
+      break;
     case CLEAR_LAYERS:
       if (record->event.pressed) {
         layer_clear();
@@ -44,7 +49,7 @@ const uint16_t PROGMEM quote_combo[] = {KC_S, LT(_FKEYS, KC_T), LT(_BOARD, KC_E)
 const uint16_t PROGMEM zero_combo[] = {LT(_MEDIA, KC_R), LT(_FKEYS, KC_T), KC_O, COMBO_END};
 const uint16_t PROGMEM four_combo[] = {LT(_MEDIA, KC_R), LT(_FKEYS, KC_T), KC_N, COMBO_END};
 const uint16_t PROGMEM five_combo[] = {LT(_MEDIA, KC_R), LT(_FKEYS, KC_T), LT(_BOARD, KC_E), COMBO_END};
-const uint16_t PROGMEM six_combo[] = {LT(_MEDIA, KC_R), LT(_FKEYS, KC_T), LT(_SYSTEM, KC_A), COMBO_END};
+const uint16_t PROGMEM six_combo[] = {LT(_MEDIA, KC_R), LT(_FKEYS, KC_T), KC_A, COMBO_END};
 const uint16_t PROGMEM seven_combo[] = {LT(_MEDIA, KC_R), LT(_FKEYS, KC_T), CMD_T(KC_J), COMBO_END};
 const uint16_t PROGMEM eight_combo[] = {LT(_MEDIA, KC_R), LT(_FKEYS, KC_T), OPT_T(KC_U), COMBO_END};
 const uint16_t PROGMEM nine_combo[] = {LT(_MEDIA, KC_R), LT(_FKEYS, KC_T), CTL_T(KC_B), COMBO_END};
@@ -52,29 +57,29 @@ const uint16_t PROGMEM plus_combo[] = {KC_S, LT(_FKEYS, KC_T), CMD_T(KC_J), COMB
 const uint16_t PROGMEM astsk_combo[] = {KC_S, LT(_FKEYS, KC_T), OPT_T(KC_U), COMBO_END};
 const uint16_t PROGMEM tilde_combo[] = {KC_S, LT(_FKEYS, KC_T), CTL_T(KC_B), COMBO_END};
 const uint16_t PROGMEM slash_combo[] = {KC_S, LT(_FKEYS, KC_T), KC_N, COMBO_END};
-const uint16_t PROGMEM exclm_combo[] = {KC_S, LT(_FKEYS, KC_T), LT(_SYSTEM, KC_A), COMBO_END};
+const uint16_t PROGMEM exclm_combo[] = {KC_S, LT(_FKEYS, KC_T), KC_A, COMBO_END};
 const uint16_t PROGMEM quest_combo[] = {KC_S, LT(_FKEYS, KC_T), KC_O, COMBO_END};
-const uint16_t PROGMEM at_combo[] = {LT(_BOARD, KC_E), LT(_SYSTEM, KC_A), CTL_T(KC_C), COMBO_END};
-const uint16_t PROGMEM pound_combo[] = {LT(_BOARD, KC_E), LT(_SYSTEM, KC_A), OPT_T(KC_L), COMBO_END};
-const uint16_t PROGMEM dollar_combo[] = {LT(_BOARD, KC_E), LT(_SYSTEM, KC_A), CMD_T(KC_D), COMBO_END};
-const uint16_t PROGMEM grave_combo[] = {LT(_BOARD, KC_E), LT(_SYSTEM, KC_A), KC_I, COMBO_END};
-const uint16_t PROGMEM percent_combo[] = {LT(_BOARD, KC_E), LT(_SYSTEM, KC_A), KC_S, COMBO_END};
-const uint16_t PROGMEM caret_combo[] = {LT(_BOARD, KC_E), LT(_SYSTEM, KC_A), LT(_MEDIA, KC_R), COMBO_END};
-const uint16_t PROGMEM amp_combo[] = {LT(_BOARD, KC_E), LT(_SYSTEM, KC_A), LT(_FKEYS, KC_T), COMBO_END};
+const uint16_t PROGMEM at_combo[] = {LT(_BOARD, KC_E), KC_A, CTL_T(KC_C), COMBO_END};
+const uint16_t PROGMEM pound_combo[] = {LT(_BOARD, KC_E), KC_A, OPT_T(KC_L), COMBO_END};
+const uint16_t PROGMEM dollar_combo[] = {LT(_BOARD, KC_E), KC_A, CMD_T(KC_D), COMBO_END};
+const uint16_t PROGMEM grave_combo[] = {LT(_BOARD, KC_E), KC_A, KC_I, COMBO_END};
+const uint16_t PROGMEM percent_combo[] = {LT(_BOARD, KC_E), KC_A, KC_S, COMBO_END};
+const uint16_t PROGMEM caret_combo[] = {LT(_BOARD, KC_E), KC_A, LT(_MEDIA, KC_R), COMBO_END};
+const uint16_t PROGMEM amp_combo[] = {LT(_BOARD, KC_E), KC_A, LT(_FKEYS, KC_T), COMBO_END};
 const uint16_t PROGMEM lbrkt_combo[] = {KC_S, LT(_MEDIA, KC_R), CMD_T(KC_J), COMBO_END};
 const uint16_t PROGMEM rbrkt_combo[] = {KC_S, LT(_MEDIA, KC_R), OPT_T(KC_U), COMBO_END};
 const uint16_t PROGMEM pipe_combo[] = {KC_S, LT(_MEDIA, KC_R), CTL_T(KC_B), COMBO_END};
 const uint16_t PROGMEM lbrc_combo[] = {KC_S, LT(_MEDIA, KC_R), KC_N, COMBO_END};
 const uint16_t PROGMEM rbrc_combo[] = {KC_S, LT(_MEDIA, KC_R), LT(_BOARD, KC_E), COMBO_END};
-const uint16_t PROGMEM bkslsh_combo[] = {KC_S, LT(_MEDIA, KC_R), LT(_SYSTEM, KC_A), COMBO_END};
+const uint16_t PROGMEM bkslsh_combo[] = {KC_S, LT(_MEDIA, KC_R), KC_A, COMBO_END};
 const uint16_t PROGMEM esc_combo[] = {KC_S, LT(_MEDIA, KC_R), KC_O, COMBO_END};
-const uint16_t PROGMEM eql_combo[] = {CTL_T(KC_C), KC_N, LT(_SYSTEM, KC_A), COMBO_END};
-const uint16_t PROGMEM lt_combo[] = {KC_N,  LT(_SYSTEM, KC_A), OPT_T(KC_L), COMBO_END};
-const uint16_t PROGMEM gt_combo[] = {KC_N,  LT(_SYSTEM, KC_A), CMD_T(KC_D), COMBO_END};
-const uint16_t PROGMEM underscore_combo[] = {KC_N,  LT(_SYSTEM, KC_A), KC_I, COMBO_END};
-const uint16_t PROGMEM scln_combo[] = {KC_S, KC_N, LT(_SYSTEM, KC_A), COMBO_END};
-const uint16_t PROGMEM lparen_combo[] = {KC_N, LT(_SYSTEM, KC_A), LT(_MEDIA, KC_R), COMBO_END};
-const uint16_t PROGMEM rparen_combo[] = {KC_N, LT(_SYSTEM, KC_A), LT(_FKEYS, KC_T), COMBO_END};
+const uint16_t PROGMEM eql_combo[] = {CTL_T(KC_C), KC_N, KC_A, COMBO_END};
+const uint16_t PROGMEM lt_combo[] = {KC_N,  KC_A, OPT_T(KC_L), COMBO_END};
+const uint16_t PROGMEM gt_combo[] = {KC_N,  KC_A, CMD_T(KC_D), COMBO_END};
+const uint16_t PROGMEM underscore_combo[] = {KC_N,  KC_A, KC_I, COMBO_END};
+const uint16_t PROGMEM scln_combo[] = {KC_S, KC_N, KC_A, COMBO_END};
+const uint16_t PROGMEM lparen_combo[] = {KC_N, KC_A, LT(_MEDIA, KC_R), COMBO_END};
+const uint16_t PROGMEM rparen_combo[] = {KC_N, KC_A, LT(_FKEYS, KC_T), COMBO_END};
 const uint16_t PROGMEM ctl_combo[] = {KC_N, LT(_BOARD, KC_E), CTL_T(KC_C), COMBO_END};
 const uint16_t PROGMEM opt_combo[] = {KC_N, LT(_BOARD, KC_E), OPT_T(KC_L), COMBO_END};
 const uint16_t PROGMEM cmd_combo[] = {KC_N, LT(_BOARD, KC_E), CMD_T(KC_D), COMBO_END};
@@ -92,7 +97,7 @@ const uint16_t PROGMEM right_tab_combo[] = {OPT_T(KC_L), CMD_T(KC_D), OPT_T(KC_U
 const uint16_t PROGMEM sopt_up_combo[] = {OPT_T(KC_L), CMD_T(KC_D), CTL_T(KC_B), COMBO_END};
 const uint16_t PROGMEM back_combo[] = {OPT_T(KC_L), CMD_T(KC_D), KC_N, COMBO_END};
 const uint16_t PROGMEM fwd_combo[] = {OPT_T(KC_L), CMD_T(KC_D), LT(_BOARD, KC_E), COMBO_END};
-const uint16_t PROGMEM sopt_down_combo[] = {OPT_T(KC_L), CMD_T(KC_D), LT(_SYSTEM, KC_A), COMBO_END};
+const uint16_t PROGMEM sopt_down_combo[] = {OPT_T(KC_L), CMD_T(KC_D), KC_A, COMBO_END};
 const uint16_t PROGMEM assign_combo[] = {CMD_T(KC_J), CTL_T(KC_B), CTL_T(KC_C), COMBO_END};
 const uint16_t PROGMEM up_combo[] = {CMD_T(KC_J), CTL_T(KC_B), OPT_T(KC_L), COMBO_END};
 const uint16_t PROGMEM down_combo[] = {CMD_T(KC_J), CTL_T(KC_B), LT(_MEDIA, KC_R), COMBO_END};
@@ -104,7 +109,7 @@ const uint16_t PROGMEM copy_combo[] = {CTL_T(KC_C), CMD_T(KC_D), OPT_T(KC_U), CO
 const uint16_t PROGMEM paste_combo[] = {CTL_T(KC_C), CMD_T(KC_D), CTL_T(KC_B), COMBO_END};
 const uint16_t PROGMEM undo_combo[] = {CTL_T(KC_C), CMD_T(KC_D), KC_N, COMBO_END};
 const uint16_t PROGMEM find_combo[] = {CTL_T(KC_C), CMD_T(KC_D), LT(_BOARD, KC_E), COMBO_END};
-const uint16_t PROGMEM cmd_g_combo[] = {CTL_T(KC_C), CMD_T(KC_D), LT(_SYSTEM, KC_A), COMBO_END};
+const uint16_t PROGMEM cmd_g_combo[] = {CTL_T(KC_C), CMD_T(KC_D), KC_A, COMBO_END};
 const uint16_t PROGMEM scmd_g_combo[] = {CTL_T(KC_C), CMD_T(KC_D), KC_O, COMBO_END};
 const uint16_t PROGMEM clip_screenshot_combo[] = {CMD_T(KC_J), OPT_T(KC_U), CTL_T(KC_C), COMBO_END};
 const uint16_t PROGMEM home_combo[] = {CMD_T(KC_J), OPT_T(KC_U), OPT_T(KC_L), COMBO_END};
@@ -118,16 +123,17 @@ const uint16_t PROGMEM hide_others_combo[] = {CTL_T(KC_C), OPT_T(KC_L), OPT_T(KC
 const uint16_t PROGMEM archive_combo[] = {CTL_T(KC_C), OPT_T(KC_L), CTL_T(KC_B), COMBO_END};
 const uint16_t PROGMEM redo_combo[] = {CTL_T(KC_C), OPT_T(KC_L), KC_N, COMBO_END};
 const uint16_t PROGMEM hide_combo[] = {CTL_T(KC_C), OPT_T(KC_L), LT(_BOARD, KC_E), COMBO_END};
-const uint16_t PROGMEM flag_combo[] = {CTL_T(KC_C), OPT_T(KC_L), LT(_SYSTEM, KC_A), COMBO_END};
+const uint16_t PROGMEM flag_combo[] = {CTL_T(KC_C), OPT_T(KC_L), KC_A, COMBO_END};
 const uint16_t PROGMEM ctl_right_combo[] = {CTL_T(KC_C), OPT_T(KC_L), KC_O, COMBO_END};
 const uint16_t PROGMEM quit_combo[] = {OPT_T(KC_L), CMD_T(KC_D), CMD_T(KC_J), OPT_T(KC_U), COMBO_END};
 const uint16_t PROGMEM to_select_combo[] = {OPT_T(KC_L), CMD_T(KC_D), OPT_T(KC_U), CTL_T(KC_B), COMBO_END};
 const uint16_t PROGMEM osm_meh_combo[] = {OPT_T(KC_L), CMD_T(KC_D), KC_N,  LT(_BOARD, KC_E), COMBO_END};
-const uint16_t PROGMEM sft_cmd_d_combo[] = {OPT_T(KC_L), CMD_T(KC_D), LT(_BOARD, KC_E), LT(_SYSTEM, KC_A), COMBO_END};
+const uint16_t PROGMEM sft_cmd_d_combo[] = {OPT_T(KC_L), CMD_T(KC_D), LT(_BOARD, KC_E), KC_A, COMBO_END};
 const uint16_t PROGMEM cmd_w_combo[] = {KC_S, LT(_MEDIA, KC_R), OPT_T(KC_U), CTL_T(KC_B), COMBO_END};
 const uint16_t PROGMEM clear_layers_combo[] = {LT(_MEDIA, KC_R), LT(_FKEYS, KC_T), KC_N, LT(_BOARD, KC_E), COMBO_END};
-const uint16_t PROGMEM to_arrows_combo[] = {LT(_MEDIA, KC_R), LT(_FKEYS, KC_T), LT(_BOARD, KC_E), LT(_SYSTEM, KC_A), COMBO_END};
-const uint16_t PROGMEM to_mouse_combo[] = {LT(_MEDIA, KC_R), LT(_FKEYS, KC_T), KC_N, LT(_SYSTEM, KC_A), COMBO_END};
+const uint16_t PROGMEM to_arrows_combo[] = {LT(_MEDIA, KC_R), LT(_FKEYS, KC_T), LT(_BOARD, KC_E), KC_A, COMBO_END};
+const uint16_t PROGMEM tg_system_combo[] = {LT(_MEDIA, KC_R), LT(_FKEYS, KC_T), OPT_T(KC_U), CTL_T(KC_B), COMBO_END};
+const uint16_t PROGMEM to_mouse_combo[] = {LT(_MEDIA, KC_R), LT(_FKEYS, KC_T), KC_N, KC_A, COMBO_END};
 
 combo_t key_combos[COMBO_COUNT] = {
     COMBO(bspc_combo, KC_BSPC),
@@ -220,5 +226,6 @@ combo_t key_combos[COMBO_COUNT] = {
     COMBO(cmd_w_combo, LGUI(KC_W)),
     COMBO(clear_layers_combo, CLEAR_LAYERS),
     COMBO(to_arrows_combo, TG_ARROWS),
+    COMBO(tg_system_combo, TG_SYSTEM),
     COMBO(to_mouse_combo, TG_MOUSE)
 };
