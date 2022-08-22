@@ -28,6 +28,9 @@ enum custom_keycodes {
   TG_ARROWS,
   TG_MOUSE,
   TG_SYSTEM,
+  TG_BOARD,
+  TG_MEDIA,
+  TG_FKEYS,
 };
 
 // Defines for task manager and such
@@ -35,10 +38,10 @@ enum custom_keycodes {
 
 #define TIM_isrt18 { \
 [_ALPHA0] = MKLAYOUT( \
-  LGUI(LSFT(LCTL(KC_4))), LGUI(KC_W),       LGUI(KC_V),       LGUI(KC_C),       _______,       MO(_SELECT),    LOCKSCRN, _______,      _______,      _______,          _______,     _______, \
-  KC_ENT,                 CTL_T(KC_C),      OPT_T(KC_L),      CMD_T(KC_D),      LGUI(KC_Q),    _______,        _______,  _______,      CMD_T(KC_J),  OPT_T(KC_U),      CTL_T(KC_B), KC_BSPC, \
-  KC_I,                   KC_S,             LT(_MEDIA, KC_R), LT(_FKEYS, KC_T), _______,       _______,        _______,  _______,      KC_N,         LT(_BOARD, KC_E), KC_A,        KC_O, \
-  LGUI(LSFT(KC_4)),       LGUI(LCTL(KC_A)), LSFT(LGUI(KC_L)), OSM(MOD_LSFT),    MEH_T(KC_SPC), TG(_COMPANION),           OSL(_ALPHA1), OSL(_ALPHAC), _______,          _______,     _______ \
+  LGUI(LSFT(LCTL(KC_4))), LGUI(KC_W),       LGUI(KC_V),       LGUI(KC_C),    _______,       MO(_SELECT),    LOCKSCRN, _______,      _______,      _______,     _______,     _______, \
+  KC_ENT,                 CTL_T(KC_C),      OPT_T(KC_L),      CMD_T(KC_D),   LGUI(KC_Q),    _______,        _______,  _______,      CMD_T(KC_J),  OPT_T(KC_U), CTL_T(KC_B), KC_BSPC, \
+  KC_I,                   KC_S,             KC_R,             KC_T,          _______,       _______,        _______,  _______,      KC_N,         KC_E,        KC_A,        KC_O, \
+  LGUI(LSFT(KC_4)),       LGUI(LCTL(KC_A)), LSFT(LGUI(KC_L)), OSM(MOD_LSFT), MEH_T(KC_SPC), TG(_COMPANION),           OSL(_ALPHA1), OSL(_ALPHAC), _______,     _______,     _______ \
 ), \
  \
 [_NUMS] = MKLAYOUT( \
@@ -77,24 +80,24 @@ enum custom_keycodes {
 ), \
  \
 [_FKEYS] = MKLAYOUT( \
-  _______, _______, _______, _______, _______, _______, _______, _______,       _______,       _______, _______, _______, \
-  _______, KC_F11,  KC_F12,  _______, _______, _______, _______, _______,       KC_F7,         KC_F8,   KC_F9,   _______, \
-  KC_F1,   KC_F2,   KC_F3,   XXXXXXX, _______, _______, _______, _______,       KC_F4,         KC_F5,   KC_F6,   KC_F10, \
-  _______, _______, _______, _______, _______, _______,          OSM(MOD_LGUI), OSM(MOD_LCTL), _______, _______, _______ \
+  _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, \
+  _______, KC_F11,  KC_F12,  KC_F13,  _______, _______, _______, _______, KC_F7,   KC_F8,   KC_F9,   _______, \
+  _______, KC_F1,   KC_F2,   KC_F3,   _______, _______, _______, _______, KC_F4,   KC_F5,   KC_F6,   KC_F10, \
+  _______, _______, _______, _______, _______, _______,          _______, _______, _______, _______, _______ \
 ), \
  \
 [_ARROWS] = MKLAYOUT( \
-  _______,       _______,       _______, _______,       _______, _______,        _______, _______, _______,    _______,               _______, TO(_ALPHA0), \
-  _______,       LGUI(KC_LBRC), KC_UP,   LGUI(KC_RBRC), _______, _______,        _______, _______, KC_PGUP,    MT(MOD_LALT, KC_HOME), KC_LCTL, _______, \
-  LSFT(KC_LALT), KC_LEFT,       KC_DOWN, KC_RIGHT,      _______, _______,        _______, _______, KC_PGDN,    KC_END,                _______, KC_LSFT, \
-  _______,       _______,       _______, TO(_ALPHA0),   _______, TG(_COMPANION),          KC_LGUI, TO(_MOUSE), _______,               _______, _______ \
+  _______,       _______,       _______, _______,       _______, _______, _______, _______,    _______, _______, _______, TO(_ALPHA0), \
+  _______,       LGUI(KC_LBRC), KC_UP,   LGUI(KC_RBRC), _______, _______, _______, _______,    KC_LGUI, KC_LALT, KC_LCTL, _______, \
+  LSFT(KC_LALT), KC_LEFT,       KC_DOWN, KC_RIGHT,      _______, _______, _______, _______,    _______, _______, _______, KC_LSFT, \
+  _______,       _______,       _______, _______,       _______, _______,          _______, TO(_MOUSE), _______, _______, _______ \
 ), \
  \
 [_MOUSE] = MKLAYOUT( \
-  _______,    _______,       _______,    _______,        _______,    _______,     _______, _______, _______,       _______,      _______,      TO(_ALPHA0), \
-  _______,    KC_MS_WH_LEFT, KC_MS_UP,   KC_MS_WH_RIGHT, _______,    _______,     _______, _______, KC_MS_WH_UP,   KC_LALT,      KC_LCTL,      _______, \
-  KC_MS_BTN2, KC_MS_LEFT,    KC_MS_DOWN, KC_MS_RIGHT,    _______,    _______,     _______, _______, KC_MS_WH_DOWN, KC_MS_ACCEL2, KC_MS_ACCEL0, KC_LSFT, \
-  _______,    _______,       _______,    TO(_ALPHA0),    KC_MS_BTN1, TO(_ALPHA0),          KC_LGUI, TO(_ARROWS),   _______,      _______,      _______ \
+  _______,    _______,       _______,    _______,        _______,    _______, _______, _______,     _______,       _______,      _______,      TO(_ALPHA0), \
+  _______,    KC_MS_WH_LEFT, KC_MS_UP,   KC_MS_WH_RIGHT, _______,    _______, _______, _______,     KC_LGUI,       KC_LALT,      KC_LCTL,      _______, \
+  KC_MS_BTN2, KC_MS_LEFT,    KC_MS_DOWN, KC_MS_RIGHT,    _______,    _______, _______, _______,     KC_MS_WH_DOWN, KC_MS_ACCEL2, KC_MS_ACCEL0, KC_LSFT, \
+  _______,    _______,       _______,    TO(_ALPHA0),    KC_MS_BTN1, _______,          KC_MS_WH_UP, TO(_ARROWS),   _______,      _______,      _______ \
 ), \
  \
 [_MEDIA] = MKLAYOUT( \
@@ -121,7 +124,7 @@ enum custom_keycodes {
 [_BOARD] = MKLAYOUT( \
   _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,        _______, \
   _______, RGB_SAI, RGB_VAI, RGB_HUI, RGB_SPI, _______, _______, _______, _______, _______, RESET,          _______, \
-  RGB_TOG, RGB_SAD, RGB_VAD, RGB_HUD, RGB_SPD, _______, _______, _______, RGB_MOD, XXXXXXX, RGB_MODE_PLAIN, DEBUG, \
+  RGB_TOG, RGB_SAD, RGB_VAD, RGB_HUD, RGB_SPD, _______, _______, _______, RGB_MOD, _______, RGB_MODE_PLAIN, DEBUG, \
   _______, _______, _______, _______, _______, _______,          _______, _______, _______, _______,        _______ \
 ), \
  \
