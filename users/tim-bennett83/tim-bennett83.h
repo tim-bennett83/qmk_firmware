@@ -3,8 +3,6 @@
 enum layer_names {
     _ALPHA0,
     _NUMS,
-    _ALPHA1,
-    _ALPHAC,
     _GAME0,
     _GAME1,
     _SYM1,
@@ -16,6 +14,8 @@ enum layer_names {
     _MEDIA,
     _COMPANION,
     _SYSTEM,
+    _ALPHA1,
+    _ALPHAC,
     _BOARD,
     _SELECT
 };
@@ -90,7 +90,7 @@ enum custom_keycodes {
   _______,       _______,       _______, _______,       _______, _______, _______, _______,    _______, _______, _______, TO(_ALPHA0), \
   _______,       LGUI(KC_LBRC), KC_UP,   LGUI(KC_RBRC), _______, _______, _______, _______,    KC_LGUI, KC_LALT, KC_LCTL, _______, \
   LSFT(KC_LALT), KC_LEFT,       KC_DOWN, KC_RIGHT,      _______, _______, _______, _______,    _______, _______, _______, KC_LSFT, \
-  _______,       _______,       _______, _______,       _______, _______,          _______, TO(_MOUSE), _______, _______, _______ \
+  _______,       _______,       _______, _______,       _______, _______,          _______,    _______, _______, _______, _______ \
 ), \
  \
 [_MOUSE] = MKLAYOUT( \
