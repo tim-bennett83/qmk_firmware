@@ -38,10 +38,10 @@ enum custom_keycodes {
 
 #define TIM_isrt18 { \
 [_ALPHA0] = MKLAYOUT( \
-  LGUI(LSFT(LCTL(KC_4))), LGUI(KC_W),       LGUI(KC_V),       LGUI(KC_C),    _______,       MO(_SELECT),    LOCKSCRN, _______,      _______,      _______,     _______,     _______, \
-  KC_ENT,                 CTL_T(KC_C),      OPT_T(KC_L),      CMD_T(KC_D),   LGUI(KC_Q),    _______,        _______,  _______,      CMD_T(KC_J),  OPT_T(KC_U), CTL_T(KC_B), KC_BSPC, \
-  KC_I,                   KC_S,             KC_R,             KC_T,          _______,       _______,        _______,  _______,      KC_N,         KC_E,        KC_A,        KC_O, \
-  LGUI(LSFT(KC_4)),       LGUI(LCTL(KC_A)), LSFT(LGUI(KC_L)), OSM(MOD_LSFT), MEH_T(KC_SPC), TG(_COMPANION),           OSL(_ALPHA1), OSL(_ALPHAC), _______,     _______,     _______ \
+  _______,                _______,          LGUI(KC_V),       LGUI(KC_C),    _______,                   MO(_SELECT),    _______, LOCKSCRN,      _______,      _______,     _______,     _______, \
+  KC_ENT,                 CTL_T(KC_C),      OPT_T(KC_L),      CMD_T(KC_D),   LGUI(LSFT(LCTL(KC_4))),    _______,        _______,  _______,      CMD_T(KC_J),  OPT_T(KC_U), CTL_T(KC_B), KC_BSPC, \
+  KC_I,                   KC_S,             KC_R,             KC_T,          _______,                   _______,        _______,  _______,      KC_N,         KC_E,        KC_A,        KC_O, \
+  LGUI(LSFT(KC_4)),       LGUI(LCTL(KC_A)), LSFT(LGUI(KC_L)), OSM(MOD_LSFT), MEH_T(KC_SPC),             TG(_COMPANION),           OSL(_ALPHA1), OSL(_ALPHAC), _______,     _______,     _______ \
 ), \
  \
 [_NUMS] = MKLAYOUT( \
