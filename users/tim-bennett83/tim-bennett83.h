@@ -3,10 +3,6 @@
 enum layer_names {
     _ALPHA0,
     _NUMS,
-    _GAME0,
-    _GAME1,
-    _GAME2,
-    _GAME3,
     _SYM1,
     _SYM2,
     _SYM3,
@@ -19,7 +15,11 @@ enum layer_names {
     _ALPHA1,
     _ALPHAC,
     _BOARD,
-    _SELECT
+    _SELECT,
+    _GAME0,
+    _GAME1,
+    _GAME2,
+    _GAME3
 };
 
 enum custom_keycodes {
