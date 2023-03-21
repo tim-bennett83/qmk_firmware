@@ -15,37 +15,37 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       break;
     case TO_SELECT:
       if (record->event.pressed) {
-        layer_invert(_SELECT);
+        layer_move(_SELECT);
       }
       break;
     case TG_ARROWS:
       if (record->event.pressed) {
-        layer_invert(_ARROWS);
+        layer_move(_ARROWS);
       }
       break;
     case TG_MOUSE:
       if (record->event.pressed) {
-        layer_invert(_MOUSE);
+        layer_move(_MOUSE);
       }
       break;
     case TG_SYSTEM:
       if (record->event.pressed) {
-        layer_invert(_SYSTEM);
+        layer_move(_SYSTEM);
       }
       break;
     case TG_BOARD:
       if (record->event.pressed) {
-        layer_invert(_BOARD);
+        layer_move(_BOARD);
       }
       break;
     case TG_MEDIA:
       if (record->event.pressed) {
-        layer_invert(_MEDIA);
+        layer_move(_MEDIA);
       }
       break;
     case TG_FKEYS:
       if (record->event.pressed) {
-        layer_invert(_FKEYS);
+        layer_move(_FKEYS);
       }
       break;
     case CLEAR_LAYERS:

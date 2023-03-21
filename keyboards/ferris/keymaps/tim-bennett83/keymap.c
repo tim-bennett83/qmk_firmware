@@ -21,9 +21,9 @@
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [_ALPHA0] = LAYOUT(
-  _______, _______,     LGUI(KC_V),  LGUI(KC_C),  _______,                        LOCKSCRN, _______,     _______,     _______,     _______,
-  KC_ENT,  CTL_T(KC_C), OPT_T(KC_L), CMD_T(KC_D), LGUI(LSFT(LCTL(KC_4))),         KC_CAPS,  CMD_T(KC_J), OPT_T(KC_U), CTL_T(KC_B), KC_BSPC,
-  KC_I,    KC_S,        KC_R,        KC_T,        LGUI(LSFT(KC_4)),               KC_TAB,   KC_N,        KC_E,        KC_A,        KC_O,
+  _______, LGUI(KC_Z),  LGUI(KC_V),  LGUI(KC_C),  LGUI(KC_X),                     LOCKSCRN,  LALT(LGUI(KC_D)), _______,     _______,     KC_CAPS,
+  KC_ENT,  CTL_T(KC_C), OPT_T(KC_L), CMD_T(KC_D), LGUI(LSFT(LCTL(KC_4))),         CAPS_WORD, CMD_T(KC_J),      OPT_T(KC_U), CTL_T(KC_B), KC_BSPC,
+  KC_I,    KC_S,        KC_R,        KC_T,        LGUI(LSFT(KC_4)),               KC_TAB,    KC_N,             KC_E,        KC_A,        KC_O,
                                             OSM(MOD_LSFT),   MEH_T(KC_SPC), OSL(_ALPHA1), OSL(_ALPHAC)
 ),
 
