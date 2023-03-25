@@ -135,7 +135,7 @@ const uint16_t PROGMEM del_combo[] = {CMD_T(KC_J), OPT_T(KC_U), KC_I, COMBO_END}
 const uint16_t PROGMEM screenshot_combo[] = {CMD_T(KC_J), OPT_T(KC_U), KC_S, COMBO_END};
 const uint16_t PROGMEM end_combo[] = {CMD_T(KC_J), OPT_T(KC_U), KC_R, COMBO_END};
 const uint16_t PROGMEM pgdown_combo[] = {CMD_T(KC_J), OPT_T(KC_U), KC_T, COMBO_END};
-const uint16_t PROGMEM capsword_combo[] = {CTL_T(KC_C), OPT_T(KC_L), CMD_T(KC_J), COMBO_END};
+const uint16_t PROGMEM toggle_dock_combo[] = {CTL_T(KC_C), OPT_T(KC_L), CMD_T(KC_J), COMBO_END};
 const uint16_t PROGMEM hide_others_combo[] = {CTL_T(KC_C), OPT_T(KC_L), OPT_T(KC_U), COMBO_END};
 const uint16_t PROGMEM archive_combo[] = {CTL_T(KC_C), OPT_T(KC_L), CTL_T(KC_B), COMBO_END};
 const uint16_t PROGMEM redo_combo[] = {CTL_T(KC_C), OPT_T(KC_L), KC_N, COMBO_END};
@@ -154,6 +154,7 @@ const uint16_t PROGMEM tg_board_combo[] = {KC_R, KC_T, CMD_T(KC_J), CTL_T(KC_B),
 const uint16_t PROGMEM tg_media_combo[] = {KC_R, KC_T, CMD_T(KC_J), OPT_T(KC_U), COMBO_END};
 const uint16_t PROGMEM tg_fkeys_combo[] = {OPT_T(KC_L), CMD_T(KC_D), KC_N,  KC_A, COMBO_END};
 const uint16_t PROGMEM to_mouse_combo[] = {KC_R, KC_T, KC_N, KC_A, COMBO_END};
+const uint16_t PROGMEM capsword_combo[] = {KC_S, KC_R, KC_E, KC_A, COMBO_END};
 
 combo_t key_combos[COMBO_COUNT] = {
     COMBO(bspc_combo, KC_BSPC),
@@ -252,5 +253,6 @@ combo_t key_combos[COMBO_COUNT] = {
     COMBO(tg_board_combo, TG_BOARD),
     COMBO(tg_media_combo, TG_MEDIA),
     COMBO(tg_fkeys_combo, TG_FKEYS),
-    COMBO(to_mouse_combo, TG_MOUSE)
+    COMBO(to_mouse_combo, TG_MOUSE),
+    COMBO(toggle_dock_combo, LGUI(LALT(KC_D)))
 };
