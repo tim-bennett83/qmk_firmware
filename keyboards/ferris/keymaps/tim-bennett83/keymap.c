@@ -29,8 +29,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 [_NUMS] = LAYOUT(
   _______, _______, _______, _______, _______,        _______, _______, _______, _______, _______,
-  _______, _______, _______, _______, _______,        _______, KC_7,    KC_8,    KC_9,    _______,
-  _______, KC_1,    KC_2,    KC_3,    _______,        _______, KC_4,    KC_5,    KC_6,    KC_0,
+  _______, KC_LCTL, KC_LALT, KC_LGUI, _______,        _______, KC_7,    KC_8,    KC_9,    _______,
+  KC_LSFT, KC_1,    KC_2,    KC_3,    _______,        _______, KC_4,    KC_5,    KC_6,    KC_0,
                                  _______, _______, _______, _______
 ),
 
@@ -94,15 +94,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [_ARROWS] = LAYOUT(
   _______,       _______,       _______, _______,       _______,        _______, KC_X,    KC_C,    KC_V,    KC_Z,
   _______,       LGUI(KC_LBRC), KC_UP,   LGUI(KC_RBRC), _______,        KC_K,    KC_LGUI, KC_LALT, KC_LCTL, KC_D,
-  LSFT(KC_LALT), KC_LEFT,       KC_DOWN, KC_RIGHT,      _______,        KC_Q,    KC_A,    KC_S,    KC_F,    KC_LSFT,
+  LSFT(KC_LALT), KC_LEFT,       KC_DOWN, KC_RIGHT,      _______,        KC_A,    KC_Q,    KC_S,    KC_F,    KC_LSFT,
                                               _______,     _______, _______, _______
 ),
 
 [_MOUSE] = LAYOUT(
-  _______,    _______,       _______,    _______,        _______,          _______,     _______,       _______,      _______,      TO(_ALPHA0),
+  _______,    _______,       _______,    _______,        _______,          _______,     _______,       _______,      _______,      _______,
   _______,    KC_MS_WH_LEFT, KC_MS_UP,   KC_MS_WH_RIGHT, _______,          _______,     KC_LGUI,       KC_LALT,      KC_LCTL,      _______,
   KC_MS_BTN2, KC_MS_LEFT,    KC_MS_DOWN, KC_MS_RIGHT,    _______,          _______,     KC_MS_WH_DOWN, KC_MS_ACCEL2, KC_MS_ACCEL0, KC_LSFT,
-                                              TO(_ALPHA0), KC_MS_BTN1, KC_MS_WH_UP, TO(_ARROWS)
+                                              _______,    KC_MS_BTN1, KC_MS_WH_UP, _______
 ),
 
 [_MEDIA] = LAYOUT(
