@@ -22,18 +22,10 @@ enum custom_keycodes {
   NOT_EQUAL,
   TO_SELECT,
   CLEAR_LAYERS,
-  TG_ARROWS,
-  TG_MOUSE,
-  TG_SYSTEM,
-  TG_BOARD,
-  TG_MEDIA,
-  TG_FKEYS,
+  CAPSSTICK,
+  LOCKSCRN,
   PH_0,
   PH_1,
   PH_2,
   PH_3
 };
-
-// Defines for task manager and such
-#define LOCKSCRN LCTL(LGUI(KC_Q))
-

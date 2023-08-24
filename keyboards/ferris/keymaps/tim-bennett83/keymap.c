@@ -66,7 +66,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [_SYMS_SFT] = LAYOUT(
   _______, _______,      _______,      _______, _______,        _______, _______,       _______,       _______,      _______,
   _______, LSFT(KC_TAB), LSFT(KC_GRV), KC_HOME, _______,        _______, LSFT(KC_QUOT), LSFT(KC_SCLN), LSFT(KC_ENT), _______,
-  _______, NOT_EQUAL,    KC_CAPS,      KC_END,  _______,        _______, LSFT(KC_LBRC), LSFT(KC_RBRC), KC_DEL,       _______,
+  _______, NOT_EQUAL,    CAPSSTICK,    KC_END,  _______,        _______, LSFT(KC_LBRC), LSFT(KC_RBRC), KC_DEL,       _______,
                                            _______, _______, _______, _______
 ),
 

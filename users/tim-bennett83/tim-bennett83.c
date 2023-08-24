@@ -18,6 +18,18 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         layer_clear();
       }
       break;
+    case CAPSSTICK:
+      if (record->event.pressed) {
+          tap_code(KC_CAPS);
+      }
+      break;
+    case LOCKSCRN:
+      if (record->event.pressed) {
+          tap_code16(LCTL(LGUI(KC_Q)));
+          _delay_ms(2000);
+          tap_code(KC_ESC);
+        }
+      break;
   }
   return true;
 }
