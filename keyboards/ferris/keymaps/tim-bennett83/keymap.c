@@ -21,31 +21,67 @@
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [_ALPHA0] = LAYOUT(
-  _______, LGUI(KC_Z),  LGUI(KC_V),  LGUI(KC_C),  LGUI(KC_X),                     LOCKSCRN,  LALT(LGUI(KC_D)), _______,     _______,     KC_CAPS,
-  KC_ENT,  CTL_T(KC_C), OPT_T(KC_L), CMD_T(KC_D), LGUI(LSFT(LCTL(KC_4))),         CAPS_WORD, CMD_T(KC_J),      OPT_T(KC_U), CTL_T(KC_B), KC_BSPC,
-  KC_I,    KC_S,        KC_R,        KC_T,        LGUI(LSFT(KC_4)),               KC_TAB,    KC_N,             KC_E,        KC_A,        KC_O,
-                                            OSM(MOD_LSFT),   MEH_T(KC_SPC), OSL(_ALPHA1), OSL(_ALPHAC)
+  _______, LGUI(KC_Z), LGUI(KC_V), LGUI(KC_C), LGUI(KC_X),                     LOCKSCRN, LALT(LGUI(KC_D)), _______, _______, KC_CAPS,
+  PH_0,    KC_C,       KC_L,       KC_D,       LGUI(LSFT(LCTL(KC_4))),         PH_2,     KC_J,             KC_U,    KC_B,    PH_1,
+  KC_I,    KC_S,       KC_R,       KC_T,       LGUI(LSFT(KC_4)),               PH_3,     KC_N,             KC_E,    KC_A,    KC_O,
+                                          OSM(MOD_LSFT),   MEH_T(KC_SPC), OSL(_ALPHA1), OSL(_ALPHAC)
 ),
 
 [_NUMS] = LAYOUT(
   _______, _______, _______, _______, _______,        _______, _______, _______, _______, _______,
-  _______, KC_LCTL, KC_LALT, KC_LGUI, _______,        _______, KC_7,    KC_8,    KC_9,    _______,
-  KC_LSFT, KC_1,    KC_2,    KC_3,    _______,        _______, KC_4,    KC_5,    KC_6,    KC_0,
-                                 _______, _______, _______, _______
+  _______, KC_4,    KC_5,    KC_6,    _______,        _______, KC_BSLS, KC_EQL,  KC_SLSH, _______,
+  KC_MINS, KC_1,    KC_2,    KC_3,    _______,        _______, KC_7,    KC_8,    KC_9,    KC_0,
+                                _______, _______, _______, _______
+),
+
+[_NUMS_SFT] = LAYOUT(
+  _______,       _______,    _______,    _______,    _______,        _______, _______,       _______,      _______,       _______,
+  _______,       LSFT(KC_4), LSFT(KC_5), LSFT(KC_6), _______,        _______, LSFT(KC_BSLS), LSFT(KC_EQL), LSFT(KC_SLSH), _______,
+  LSFT(KC_MINS), LSFT(KC_1), LSFT(KC_2), LSFT(KC_3), _______,        _______, LSFT(KC_7),    LSFT(KC_8),   LSFT(KC_9),    LSFT(KC_0),
+                                                _______, _______, _______, _______
+),
+
+// with a bunch of Capture One shortcuts
+[_ARROWS] = LAYOUT(
+  _______, _______, _______, _______, _______,        _______, _______, _______, _______,  _______,
+  KC_K,    KC_X,    KC_C,    KC_V,    KC_Z,           _______, _______, _______, _______,  _______,
+  KC_F,    KC_S,    KC_Q,    KC_A,    KC_D,           KC_LEFT, KC_DOWN, KC_UP,   KC_RIGHT, _______,
+                                  _______, _______, _______, _______
+),
+
+[_MOUSE] = LAYOUT(
+  _______,       _______,       _______,    _______,        _______,          _______,    _______,      _______,      _______,      _______,
+  _______,       KC_MS_WH_LEFT, KC_MS_UP,   KC_MS_WH_RIGHT, _______,          _______,    KC_LGUI,      KC_LALT,      KC_LCTL,      _______,
+  KC_MS_WH_DOWN, KC_MS_LEFT,    KC_MS_DOWN, KC_MS_RIGHT,    _______,          KC_MS_BTN3, KC_MS_ACCEL2, KC_MS_ACCEL1, KC_MS_ACCEL0, KC_LSFT,
+                                                    _______, KC_MS_WH_UP, KC_MS_BTN1, KC_MS_BTN2
+),
+
+[_SYMS] = LAYOUT(
+  _______, _______, _______,   _______, _______,        _______, _______, _______, _______, _______,
+  _______, KC_TAB,  KC_GRV,    KC_PGUP, _______,        _______, KC_QUOT, KC_SCLN, KC_ENT,  _______,
+  _______, ASSIGN,  CAPS_WORD, KC_PGDN, _______,        _______, KC_LBRC, KC_RBRC, KC_BSPC, KC_ESC,
+                                  _______, _______, _______, _______
+),
+
+[_SYMS_SFT] = LAYOUT(
+  _______, _______,      _______,      _______, _______,        _______, _______,       _______,       _______,      _______,
+  _______, LSFT(KC_TAB), LSFT(KC_GRV), KC_HOME, _______,        _______, LSFT(KC_QUOT), LSFT(KC_SCLN), LSFT(KC_ENT), _______,
+  _______, NOT_EQUAL,    KC_CAPS,      KC_END,  _______,        _______, LSFT(KC_LBRC), LSFT(KC_RBRC), KC_DEL,       _______,
+                                           _______, _______, _______, _______
 ),
 
 [_ALPHA1] = LAYOUT(
-  XXXXXXX, XXXXXXX,      XXXXXXX,     XXXXXXX,        XXXXXXX,       XXXXXXX, XXXXXXX,       XXXXXXX,          XXXXXXX,     XXXXXXX,
-  XXXXXXX, CTL_T(KC_V),  OPT_T(KC_W), CMD_T(KC_COMM), XXXXXXX,       XXXXXXX, CMD_T(KC_DOT), OPT_T(KC_Z),      CTL_T(KC_Q), XXXXXXX,
-  KC_Y,    KC_M,         KC_H,        KC_G,           XXXXXXX,       XXXXXXX, KC_P,          KC_F,             KC_K,        KC_X,
-                                                _______, _______, XXXXXXX, _______
+  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+  XXXXXXX, KC_V,    KC_W,    KC_COMM, XXXXXXX,       XXXXXXX, KC_DOT,  KC_Z,    KC_Q,    XXXXXXX,
+  KC_Y,    KC_M,    KC_H,    KC_G,    XXXXXXX,       XXXXXXX, KC_P,    KC_F,    KC_K,    KC_X,
+                                _______, _______, XXXXXXX, _______
 ),
 
 [_ALPHAC] = LAYOUT(
-  XXXXXXX,    XXXXXXX,      XXXXXXX,     XXXXXXX,        XXXXXXX,       XXXXXXX, XXXXXXX,        XXXXXXX,    XXXXXXX,    XXXXXXX,
-  XXXXXXX,    LSFT(KC_V),   LSFT(KC_W),  CMD_T(KC_MINS), XXXXXXX,       XXXXXXX, CMD_T(KC_QUOT), LSFT(KC_Z), LSFT(KC_Q), XXXXXXX,
-  LSFT(KC_Y), LSFT(KC_M),   LSFT(KC_H),  LSFT(KC_G),     XXXXXXX,       XXXXXXX, LSFT(KC_P),     LSFT(KC_F), LSFT(KC_K), LSFT(KC_X),
-                                                   _______, _______, _______, XXXXXXX
+  XXXXXXX,    XXXXXXX,      XXXXXXX,     XXXXXXX,       XXXXXXX,       XXXXXXX, XXXXXXX,      XXXXXXX,    XXXXXXX,    XXXXXXX,
+  XXXXXXX,    LSFT(KC_V),   LSFT(KC_W),  LSFT(KC_COMM), XXXXXXX,       XXXXXXX, LSFT(KC_DOT), LSFT(KC_Z), LSFT(KC_Q), XXXXXXX,
+  LSFT(KC_Y), LSFT(KC_M),   LSFT(KC_H),  LSFT(KC_G),    XXXXXXX,       XXXXXXX, LSFT(KC_P),   LSFT(KC_F), LSFT(KC_K), LSFT(KC_X),
+                                                  _______, _______, _______, XXXXXXX
 ),
 
 [_GAME0] = LAYOUT(
@@ -71,39 +107,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 [_FKEYS] = LAYOUT(
   _______, _______, _______, _______, _______,       _______, _______, _______, _______, _______,
-  _______, KC_F11,  KC_F12,  KC_F13,  _______,       _______, KC_F7,   KC_F8,   KC_F9,   _______,
-  _______, KC_F1,   KC_F2,   KC_F3,   _______,       _______, KC_F4,   KC_F5,   KC_F6,   KC_F10,
+  _______, KC_F4,   KC_F5,   KC_F6,  _______,        _______, KC_F11,  KC_F12,  KC_F13,  _______,
+  _______, KC_F1,   KC_F2,   KC_F3,   _______,       _______, KC_F7,   KC_F8,   KC_F9,   KC_F10,
                                 _______, _______, _______, _______
 ),
 
-// has a lot of Capture One speed edit shortcuts
-[_ARROWS] = LAYOUT(
-  _______,       _______,       _______, _______,       _______,        _______, KC_X,    KC_C,    KC_V,    KC_Z,
-  _______,       LGUI(KC_LBRC), KC_UP,   LGUI(KC_RBRC), _______,        KC_K,    KC_LGUI, KC_LALT, KC_LCTL, KC_D,
-  LSFT(KC_LALT), KC_LEFT,       KC_DOWN, KC_RIGHT,      _______,        KC_A,    KC_Q,    KC_S,    KC_F,    KC_LSFT,
-                                              _______,     _______, _______, _______
-),
-
-[_MOUSE] = LAYOUT(
-  _______,       _______,       _______,    _______,        _______,          _______,    _______,      _______,      _______,      _______,
-  _______,       KC_MS_WH_LEFT, KC_MS_UP,   KC_MS_WH_RIGHT, _______,          _______,    KC_LGUI,      KC_LALT,      KC_LCTL,      _______,
-  KC_MS_WH_DOWN, KC_MS_LEFT,    KC_MS_DOWN, KC_MS_RIGHT,    _______,          KC_MS_BTN3, KC_MS_ACCEL2, KC_MS_ACCEL1, KC_MS_ACCEL0, KC_LSFT,
-                                                    _______, KC_MS_WH_UP, KC_MS_BTN1, KC_MS_BTN2
-),
-
 [_MEDIA] = LAYOUT(
-  _______, _______,            _______, _______,          _______,        _______, _______,             _______,             _______,             _______,
-  _______, KC_BRIGHTNESS_DOWN, _______, KC_BRIGHTNESS_UP, _______,        _______, KC_MEDIA_PREV_TRACK, KC_MEDIA_NEXT_TRACK, KC_MEDIA_PLAY_PAUSE, _______,
-  _______, KC_F14,             XXXXXXX, KC_F15,           _______,        _______, KC_AUDIO_VOL_DOWN,   KC_AUDIO_VOL_UP,     KC_AUDIO_MUTE,       _______,
-                                            _______,          _______, _______, _______
-),
-
-[_SYSTEM] = LAYOUT(
-  _______, _______, _______, _______, _______,         _______, _______,    _______, _______, _______,
-  _______, KC_GRV,  KC_DEL,  KC_CAPS, _______,         _______, _______,    _______, RESET,   _______,
-  KC_ESC,  KC_TAB,  KC_BSPC, KC_ENT,  _______,         _______, TO(_GAME0), _______, _______, _______,
+  _______, _______, _______, _______, _______,        _______, _______,             _______,             _______,             _______,
+  _______, _______, _______, _______, _______,        _______, KC_MEDIA_PREV_TRACK, KC_MEDIA_NEXT_TRACK, KC_MEDIA_PLAY_PAUSE, _______,
+  _______, KC_F14,  KC_F15,  _______, RESET,          _______, KC_AUDIO_VOL_DOWN,   KC_AUDIO_VOL_UP,     KC_AUDIO_MUTE,       _______,
                                  _______, _______, _______, _______
-),
-
+)
 };
 
