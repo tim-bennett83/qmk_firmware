@@ -27,6 +27,20 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                           OSM(MOD_LSFT),   MEH_T(KC_SPC), OSL(_ALPHA1), OSL(_ALPHAC)
 ),
 
+[_GAME0] = LAYOUT(
+  KC_ESC,  KC_Q,    KC_W,    KC_E,    KC_R,           KC_MS_WH_DOWN, _______,    KC_MS_UP,   _______,     _______,
+  KC_LSFT, KC_A,    KC_S,    KC_D,    KC_F,           KC_MS_WH_UP,   KC_MS_LEFT, KC_MS_DOWN, KC_MS_RIGHT, _______,
+  KC_TAB,  KC_Z,    KC_X,    KC_C,    KC_V,           _______,       _______,    _______,    _______,     _______,
+                             OSL(_GAME1), KC_SPC, KC_MS_BTN1, KC_MS_BTN2
+),
+
+[_GAME1] = LAYOUT(
+  KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,                  _______, _______, _______, _______, _______,
+  KC_BSPC, KC_ENT,  KC_COMM, KC_DOT,  _______,                _______, _______, _______, _______, _______,
+  KC_DEL,  _______, _______, _______, _______,                _______, _______, _______, _______, _______,
+                                  _______, TO(_GAME0), _______, _______
+),
+
 [_NUMS] = LAYOUT(
   _______, _______, _______, _______, _______,        _______, _______, _______, _______, _______,
   _______, KC_4,    KC_5,    KC_6,    _______,        _______, KC_BSLS, KC_EQL,  KC_SLSH, _______,
@@ -89,27 +103,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   XXXXXXX,    LSFT(KC_V),   LSFT(KC_W),  LSFT(KC_COMM), XXXXXXX,       XXXXXXX, LSFT(KC_DOT), LSFT(KC_Z), LSFT(KC_Q), XXXXXXX,
   LSFT(KC_Y), LSFT(KC_M),   LSFT(KC_H),  LSFT(KC_G),    XXXXXXX,       XXXXXXX, LSFT(KC_P),   LSFT(KC_F), LSFT(KC_K), LSFT(KC_X),
                                                   _______, _______, _______, XXXXXXX
-),
-
-[_GAME0] = LAYOUT(
-  KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,           KC_MS_WH_DOWN, _______,    KC_MS_UP,   _______, _______,
-  KC_LSFT, KC_A,    KC_S,    KC_D,    KC_F,           KC_MS_WH_UP,   KC_MS_LEFT, KC_MS_DOWN, KC_MS_RIGHT, _______,
-  KC_ESC,  KC_Z,    KC_X,    KC_C,    KC_V,           _______,       _______,    _______,    _______, _______,
-                                TG(_GAME1), KC_SPC, KC_MS_BTN1, KC_MS_BTN2
-),
-
-[_GAME1] = LAYOUT(
-  KC_BSPC, KC_DOT,  KC_HOME, KC_PGUP, KC_DEL,                 _______, _______, _______, _______, _______,
-  KC_ENT,  KC_COMM, KC_END,  KC_PGDN, KC_5,                   _______, _______, _______, _______, _______,
-  KC_GRV,  KC_1,    KC_2,    KC_3,    KC_4,                   _______, _______, _______, _______, _______,
-                                  TG(_GAME2), TO(_GAME0), _______, _______
-),
-
-[_GAME2] = LAYOUT(
-  KC_F1,   KC_F2,         KC_F3,         KC_F4,         KC_F5,              _______, _______, _______, _______, _______,
-  _______, _______,       _______,       _______,       _______,            _______, _______, _______, _______, _______,
-  _______, OSM(MOD_LCTL), OSM(MOD_LALT), OSM(MOD_LGUI), _______,            _______, _______, _______, _______, _______,
-                                              OSM(MOD_LSFT), TO(_GAME0), _______, _______
 ),
 
 [_FKEYS] = LAYOUT(

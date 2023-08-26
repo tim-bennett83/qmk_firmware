@@ -84,6 +84,7 @@ const uint16_t PROGMEM to_fkeys_combo[] = {KC_B, KC_A, KC_O, PH_1, MEH_T(KC_SPC)
 const uint16_t PROGMEM clear_layers_combo[] = {KC_R, KC_T, KC_N, KC_E, COMBO_END};
 const uint16_t PROGMEM to_mouse_combo[] = {KC_S, KC_R, KC_N, KC_E, COMBO_END};
 const uint16_t PROGMEM to_hjkl_combo[] = {KC_R, KC_T, KC_E, KC_A, COMBO_END};
+const uint16_t PROGMEM to_game_combo[] = {KC_C, KC_L, KC_J, KC_U, COMBO_END};
 
 combo_t key_combos[COMBO_COUNT] = {
     COMBO(sft_combo_l, OSM(MOD_LSFT)),
@@ -134,5 +135,6 @@ combo_t key_combos[COMBO_COUNT] = {
 
     COMBO(clear_layers_combo, CLEAR_LAYERS),
     COMBO(to_mouse_combo, TO(_MOUSE)),
-    COMBO(to_hjkl_combo, TO(_HJKL))
+    COMBO(to_hjkl_combo, TO(_HJKL)),
+    COMBO(to_game_combo, TO(_GAME0))
 };

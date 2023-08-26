@@ -2,6 +2,8 @@
 
 enum layer_names {
     _ALPHA0,
+    _GAME0,
+    _GAME1,
     _NUMS,
     _NUMS_SFT,
     _ARROWS,
@@ -11,9 +13,6 @@ enum layer_names {
     _SYMS_SFT,
     _ALPHA1,
     _ALPHAC,
-    _GAME0,
-    _GAME1,
-    _GAME2,
     _FKEYS,
     _MEDIA
 };
