@@ -56,22 +56,32 @@ const uint16_t PROGMEM ctl_cmd_combo_r[] = {KC_B, KC_A, KC_J, KC_N, OSL(_ALPHA1)
 const uint16_t PROGMEM opt_cmd_combo_l[] = {KC_L, KC_R, KC_D, KC_T, MEH_T(KC_SPC), COMBO_END};
 const uint16_t PROGMEM opt_cmd_combo_r[] = {KC_U, KC_E, KC_J, KC_N, OSL(_ALPHA1), COMBO_END};
 
-const uint16_t PROGMEM clear_layers_combo[] = {KC_R, KC_T, KC_N, KC_E, COMBO_END};
-const uint16_t PROGMEM osl_nums_combo[] = {KC_J, KC_N, COMBO_END};
-const uint16_t PROGMEM to_nums_combo[] = {KC_J, KC_N, MEH_T(KC_SPC), COMBO_END};
-const uint16_t PROGMEM osl_nums_sft_combo[] = {KC_U, KC_E, COMBO_END};
-const uint16_t PROGMEM to_nums_sft_combo[] = {KC_U, KC_E, MEH_T(KC_SPC), COMBO_END};
-const uint16_t PROGMEM osl_syms_combo[] = {KC_D, KC_T, COMBO_END};
-const uint16_t PROGMEM to_syms_combo[] = {KC_D, KC_T, OSL(_ALPHA1), COMBO_END};
-const uint16_t PROGMEM osl_syms_sft_combo[] = {KC_L, KC_R, COMBO_END};
-const uint16_t PROGMEM to_syms_sft_combo[] = {KC_L, KC_R, OSL(_ALPHA1), COMBO_END};
-const uint16_t PROGMEM osl_arrows_combo[] = {KC_C, KC_S, COMBO_END};
-const uint16_t PROGMEM to_arrows_combo[] = {KC_C, KC_S, OSL(_ALPHA1), COMBO_END};
-const uint16_t PROGMEM osl_fkeys_combo[] = {PH_0, KC_I, COMBO_END};
-const uint16_t PROGMEM to_fkeys_combo[] = {PH_0, KC_I, OSL(_ALPHA1), COMBO_END};
-const uint16_t PROGMEM osl_media_combo[] = {PH_1, KC_O, COMBO_END};
-const uint16_t PROGMEM to_media_combo[] = {PH_1, KC_O, MEH_T(KC_SPC), COMBO_END};
+const uint16_t PROGMEM osl_nums_combo_r[] = {KC_J, KC_N, COMBO_END};
+const uint16_t PROGMEM to_nums_combo_r[] = {KC_J, KC_N, MEH_T(KC_SPC), COMBO_END};
+const uint16_t PROGMEM osl_nums_sft_combo_r[] = {KC_U, KC_E, COMBO_END};
+const uint16_t PROGMEM to_nums_sft_combo_r[] = {KC_U, KC_E, MEH_T(KC_SPC), COMBO_END};
+const uint16_t PROGMEM osl_nums_combo_l[] = {KC_C, KC_S, COMBO_END};
+const uint16_t PROGMEM to_nums_combo_l[] = {KC_C, KC_S, OSL(_ALPHA1), COMBO_END};
+const uint16_t PROGMEM osl_nums_sft_combo_l[] = {PH_0, KC_I, COMBO_END};
+const uint16_t PROGMEM to_nums_sft_combo_l[] = {PH_0, KC_I, OSL(_ALPHA1), COMBO_END};
 
+const uint16_t PROGMEM osl_syms_combo_r[] = {KC_B, KC_A, COMBO_END};
+const uint16_t PROGMEM to_syms_combo_r[] = {KC_B, KC_A, MEH_T(KC_SPC),COMBO_END};
+const uint16_t PROGMEM osl_syms_sft_combo_r[] = {PH_1, KC_O, COMBO_END};
+const uint16_t PROGMEM to_syms_sft_combo_r[] = {PH_1, KC_O, MEH_T(KC_SPC), COMBO_END};
+const uint16_t PROGMEM osl_syms_combo_l[] = {KC_D, KC_T, COMBO_END};
+const uint16_t PROGMEM to_syms_combo_l[] = {KC_D, KC_T, OSL(_ALPHA1), COMBO_END};
+const uint16_t PROGMEM osl_syms_sft_combo_l[] = {KC_L, KC_R, COMBO_END};
+const uint16_t PROGMEM to_syms_sft_combo_l[] = {KC_L, KC_R, OSL(_ALPHA1), COMBO_END};
+
+const uint16_t PROGMEM osl_arrows_combo[] = {KC_L, KC_R, KC_D, KC_T, COMBO_END};
+const uint16_t PROGMEM to_arrows_combo[] = {KC_L, KC_R, KC_D, KC_T, OSL(_ALPHA1), COMBO_END};
+const uint16_t PROGMEM osl_media_combo[] = {KC_U, KC_E, KC_B, KC_A, COMBO_END};
+const uint16_t PROGMEM to_media_combo[] = {KC_U, KC_E, KC_B, KC_A, MEH_T(KC_SPC), COMBO_END};
+const uint16_t PROGMEM osl_fkeys_combo[] = {KC_B, KC_A, KC_O, PH_1, COMBO_END};
+const uint16_t PROGMEM to_fkeys_combo[] = {KC_B, KC_A, KC_O, PH_1, MEH_T(KC_SPC), COMBO_END};
+
+const uint16_t PROGMEM clear_layers_combo[] = {KC_R, KC_T, KC_N, KC_E, COMBO_END};
 const uint16_t PROGMEM to_mouse_combo[] = {KC_S, KC_R, KC_N, KC_E, COMBO_END};
 
 combo_t key_combos[COMBO_COUNT] = {
@@ -97,15 +107,23 @@ combo_t key_combos[COMBO_COUNT] = {
     COMBO(opt_cmd_combo_l, OSM(MOD_LALT | MOD_LGUI)),
     COMBO(opt_cmd_combo_r, OSM(MOD_RALT | MOD_RGUI)),
 
-    COMBO(clear_layers_combo, CLEAR_LAYERS),
-    COMBO(osl_nums_combo, OSL(_NUMS)),
-    COMBO(to_nums_combo, TO(_NUMS)),
-    COMBO(osl_nums_sft_combo, OSL(_NUMS_SFT)),
-    COMBO(to_nums_sft_combo, TO(_NUMS_SFT)),
-    COMBO(osl_syms_combo, OSL(_SYMS)),
-    COMBO(to_syms_combo, TO(_SYMS)),
-    COMBO(osl_syms_sft_combo, OSL(_SYMS_SFT)),
-    COMBO(to_syms_sft_combo, TO(_SYMS_SFT)),
+    COMBO(osl_nums_combo_l, OSL(_NUMS)),
+    COMBO(to_nums_combo_l, TO(_NUMS)),
+    COMBO(osl_nums_sft_combo_l, OSL(_NUMS_SFT)),
+    COMBO(to_nums_sft_combo_l, TO(_NUMS_SFT)),
+    COMBO(osl_syms_combo_l, OSL(_SYMS)),
+    COMBO(to_syms_combo_l, TO(_SYMS)),
+    COMBO(osl_syms_sft_combo_l, OSL(_SYMS_SFT)),
+    COMBO(to_syms_sft_combo_l, TO(_SYMS_SFT)),
+    COMBO(osl_nums_combo_r, OSL(_NUMS)),
+    COMBO(to_nums_combo_r, TO(_NUMS)),
+    COMBO(osl_nums_sft_combo_r, OSL(_NUMS_SFT)),
+    COMBO(to_nums_sft_combo_r, TO(_NUMS_SFT)),
+    COMBO(osl_syms_combo_r, OSL(_SYMS)),
+    COMBO(to_syms_combo_r, TO(_SYMS)),
+    COMBO(osl_syms_sft_combo_r, OSL(_SYMS_SFT)),
+    COMBO(to_syms_sft_combo_r, TO(_SYMS_SFT)),
+
     COMBO(osl_arrows_combo, OSL(_ARROWS)),
     COMBO(to_arrows_combo, TO(_ARROWS)),
     COMBO(osl_fkeys_combo, OSL(_FKEYS)),
@@ -113,5 +131,6 @@ combo_t key_combos[COMBO_COUNT] = {
     COMBO(osl_media_combo, OSL(_MEDIA)),
     COMBO(to_media_combo, TO(_MEDIA)),
 
+    COMBO(clear_layers_combo, CLEAR_LAYERS),
     COMBO(to_mouse_combo, TO(_MOUSE))
 };
