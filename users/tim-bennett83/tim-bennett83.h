@@ -5,6 +5,7 @@ enum layer_names {
     _NUMS,
     _NUMS_SFT,
     _ARROWS,
+    _HJKL,
     _MOUSE,
     _SYMS,
     _SYMS_SFT,
