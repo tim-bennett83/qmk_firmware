@@ -2,13 +2,13 @@
 
 enum layer_names {
     _ALPHA0,
+    _MOUSE,
     _GAME0,
     _GAME1,
+    _HJKL,
+    _ARROWS,
     _NUMS,
     _NUMS_SFT,
-    _ARROWS,
-    _HJKL,
-    _MOUSE,
     _SYMS,
     _SYMS_SFT,
     _ALPHA1,
