@@ -26,8 +26,8 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     case LOCKSCRN:
       if (record->event.pressed) {
           tap_code16(LCTL(LGUI(KC_Q)));
-          _delay_ms(2000);
-          tap_code(KC_ESC);
+          // _delay_ms(2000);
+          // tap_code(KC_ESC);
         }
       break;
   }
