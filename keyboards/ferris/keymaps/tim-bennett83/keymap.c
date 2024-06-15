@@ -28,9 +28,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 ),
 
 [_GAME0] = LAYOUT(
-  KC_ESC,  KC_Q,    KC_W,    KC_E,    KC_R,           KC_MS_WH_DOWN, _______,    KC_MS_UP,   _______,     _______,
-  KC_LSFT, KC_A,    KC_S,    KC_D,    KC_F,           KC_MS_WH_UP,   KC_MS_LEFT, KC_MS_DOWN, KC_MS_RIGHT, _______,
-  KC_TAB,  KC_Z,    KC_X,    KC_C,    KC_V,           _______,       _______,    _______,    _______,     _______,
+  KC_ESC,  KC_Z,    KC_X,    KC_C,    KC_V,           _______,       _______,       _______,    _______,        _______,
+  KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,           KC_MS_WH_DOWN, KC_MS_WH_LEFT, KC_MS_UP,   KC_MS_WH_RIGHT, _______,
+  KC_LSFT, KC_A,    KC_S,    KC_D,    KC_F,           KC_MS_WH_UP,   KC_MS_LEFT,    KC_MS_DOWN, KC_MS_RIGHT,    KC_MS_ACCEL2,
                              OSL(_GAME1), KC_SPC, KC_MS_BTN1, KC_MS_BTN2
 ),
 
